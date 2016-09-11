@@ -27,8 +27,14 @@
             <kind>1</kind>
             <string>/// set fixed rotation
 phy_fixed_rotation = true;
+
 playerSpeed = 4;
 image_speed = 0;
+
+//movement
+scr_get_input();
+
+state = scr_move_state;
 </string>
           </argument>
         </arguments>
@@ -52,43 +58,8 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>/// Move the player in step event
-var right_key = keyboard_check(vk_right) || keyboard_check(ord('D'));
-var left_key = keyboard_check(vk_left) || keyboard_check(ord('A'))
-var up_key = keyboard_check(vk_up) || keyboard_check(ord('W'));
-var down_key = keyboard_check(vk_down) || keyboard_check(ord('S'));
-var animation_speed = .2;
+script_execute(state);
 
-//need to do animation
-if (right_key || left_key || up_key || down_key) {
-    image_speed = animation_speed;
-} else {
-    image_speed = 0;
-    image_index = 0;
-}
-
-//right
-if (right_key) { 
-    phy_position_x += playerSpeed;
-    sprite_index = spr_player_right;    
-}
-
-//left
-if (left_key) { 
-    phy_position_x -= playerSpeed;
-    sprite_index = spr_player_left;
-}
-
-//up
-if (up_key) { 
-    phy_position_y -= playerSpeed;
-    sprite_index = spr_player_up;
-}
-
-//down
-if (down_key) { 
-    phy_position_y += playerSpeed;
-    sprite_index = spr_player_down;
-}
 
 </string>
           </argument>
@@ -114,6 +85,31 @@ if (down_key) {
             <kind>1</kind>
             <string>///collide
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw shadow
+draw_sprite(spr_player_shadow, image_index, x, y);
+draw_self();
 </string>
           </argument>
         </arguments>

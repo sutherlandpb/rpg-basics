@@ -12,12 +12,22 @@
     <sprite>sprites\spr_player_right</sprite>
     <sprite>sprites\spr_player_left</sprite>
     <sprite>sprites\spr_player_up</sprite>
+    <sprite>sprites\spr_player_shadow</sprite>
+    <sprite>sprites\sprite_bg_tile</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_tile</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_get_input.gml</script>
+    <script>scripts\scr_move_state.gml</script>
+    <script>scripts\scr_frozen_state.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_view</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
