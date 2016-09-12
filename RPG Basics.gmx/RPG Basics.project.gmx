@@ -22,12 +22,14 @@
   <scripts name="scripts">
     <script>scripts\scr_get_input.gml</script>
     <script>scripts\scr_move_state.gml</script>
+    <script>scripts\scr_move_state_dash.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_view</object>
+    <object>objects\obj_dash_effect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

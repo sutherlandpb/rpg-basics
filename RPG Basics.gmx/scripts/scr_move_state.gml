@@ -3,8 +3,13 @@
 var animation_speed = .2;
 scr_get_input();
 
+if (dash_key) {
+    state = scr_move_state_dash;
+    alarm[0] = room_speed/8;
+}
+
 //get direction
-var dir = point_direction(0,0, xaxis, yaxis);
+dir = point_direction(0,0, xaxis, yaxis);
 
 //get the length 
 if (xaxis == 0 && yaxis == 0) {
