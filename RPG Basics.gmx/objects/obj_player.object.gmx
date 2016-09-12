@@ -28,8 +28,13 @@
             <string>/// set fixed rotation
 phy_fixed_rotation = true;
 
-playerSpeed = 4;
+player_speed = 4;
+player_h_speed = 0;
+player_v_speed = 0;
+len = 0;
 image_speed = 0;
+xaxis = 0;
+yaxis = 0;
 
 //movement
 scr_get_input();
