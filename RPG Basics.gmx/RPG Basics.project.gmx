@@ -6,15 +6,20 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_player_down</sprite>
-    <sprite>sprites\spr_player_right</sprite>
-    <sprite>sprites\spr_player_left</sprite>
-    <sprite>sprites\spr_player_up</sprite>
-    <sprite>sprites\spr_player_shadow</sprite>
     <sprite>sprites\sprite_bg_tile</sprite>
     <sprite>sprites\spr_enemy_slime</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player_attack_down</sprite>
+      <sprite>sprites\spr_player_attack_left</sprite>
+      <sprite>sprites\spr_player_attack_right</sprite>
+      <sprite>sprites\spr_player_attack_up</sprite>
+      <sprite>sprites\spr_player_down</sprite>
+      <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_player_right</sprite>
+      <sprite>sprites\spr_player_shadow</sprite>
+      <sprite>sprites\spr_player_up</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -25,6 +30,7 @@
     <script>scripts\scr_move_state.gml</script>
     <script>scripts\scr_move_state_dash.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
+    <script>scripts\scr_attack_state.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
