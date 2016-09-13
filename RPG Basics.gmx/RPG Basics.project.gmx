@@ -14,6 +14,7 @@
     <sprite>sprites\spr_player_up</sprite>
     <sprite>sprites\spr_player_shadow</sprite>
     <sprite>sprites\sprite_bg_tile</sprite>
+    <sprite>sprites\spr_enemy_slime</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -30,6 +31,8 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
+    <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_actor_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

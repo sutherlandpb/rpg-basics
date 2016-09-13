@@ -5,7 +5,7 @@ scr_get_input();
 
 if (dash_key) {
     state = scr_move_state_dash;
-    alarm[0] = room_speed/8;
+    alarm[0] = room_speed/10;
 }
 
 //get direction
