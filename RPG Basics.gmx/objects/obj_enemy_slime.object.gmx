@@ -39,6 +39,30 @@ targety = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stall alarm
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -82,6 +106,39 @@ targety = 0;
             <string>/// exec current state
 event_inherited();
 script_execute(state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///damage the player
+if (state != scr_enemy_stall_state) {
+    var dir = point_direction(other.x, other.y, x, y);
+    var xdir = lengthdir_x(1, dir);
+    var ydir = lengthdir_y(1, dir);
+    var damage = instance_create(other.x + xdir, other.y + ydir, obj_damage);
+    damage.creator = id;
+    damage.knockback = 5;
+    state = scr_enemy_stall_state;
+    alarm[1] = room_speed;
+}
 </string>
           </argument>
         </arguments>

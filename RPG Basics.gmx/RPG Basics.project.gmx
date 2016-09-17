@@ -35,6 +35,7 @@
     </scripts>
     <scripts name="enemy_states">
       <script>scripts\scr_enemy_idle_state.gml</script>
+      <script>scripts\scr_enemy_stall_state.gml</script>
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
       <scripts name="enemy_helper_scripts">
