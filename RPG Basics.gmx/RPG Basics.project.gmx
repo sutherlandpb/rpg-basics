@@ -24,6 +24,7 @@
     <sprite>sprites\spr_exp</sprite>
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
+    <sprite>sprites\spr_door</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -63,9 +64,11 @@
     <object>objects\obj_exp</object>
     <object>objects\obj_wide_wall</object>
     <object>objects\obj_tall_wall</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
