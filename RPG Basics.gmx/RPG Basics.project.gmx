@@ -22,6 +22,8 @@
     </sprites>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
+    <sprite>sprites\spr_wide_wall</sprite>
+    <sprite>sprites\spr_tall_wall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -59,6 +61,8 @@
     <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_exp</object>
+    <object>objects\obj_wide_wall</object>
+    <object>objects\obj_tall_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
