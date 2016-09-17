@@ -634,12 +634,15 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="5">
+    <constants number="8">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
       <constant name="DOWN">3</constant>
       <constant name="DASH_COST">5</constant>
+      <constant name="RETURN">0</constant>
+      <constant name="NEW_ROOM">1</constant>
+      <constant name="LOAD">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

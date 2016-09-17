@@ -38,9 +38,6 @@ xaxis = 0;
 yaxis = 0;
 attacked = false;
 
-//movement
-scr_get_input();
-
 state = scr_move_state;
 face = RIGHT;
 </string>
@@ -236,6 +233,7 @@ if (state = scr_attack_state) {
             <kind>1</kind>
             <string>///set fixed rotation
 phy_fixed_rotation = true;
+persistent = true;
 </string>
           </argument>
         </arguments>
