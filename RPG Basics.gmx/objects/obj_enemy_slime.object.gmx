@@ -61,15 +61,18 @@ health_chance = .20;
             <kind>1</kind>
             <string>
 scr_add_exp(xp_reward);
-// drop a health pot
-if (scr_chance(health_chance)) {
+
+// we have our drops ordered from rare to common
+if (scr_chance(bonusxp_chance)) {
+    // drop bonus XP
+    instance_create(x, y, obj_exp);
+} else if (scr_chance(health_chance)) {
+    // drop a health pot
     instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
 }
 
-// drop bonus XP
-if (scr_chance(bonusxp_chance)) {
-    instance_create(x, y, obj_exp);
-}
+
+
 </string>
           </argument>
         </arguments>

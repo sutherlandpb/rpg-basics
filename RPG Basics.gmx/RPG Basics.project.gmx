@@ -26,7 +26,8 @@
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\sprite20</sprite>
+    <sprite>sprites\spr_sign</sprite>
+    <sprite>sprites\spr_dialog_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -70,6 +71,9 @@
     <object>objects\obj_tall_wall</object>
     <object>objects\obj_door</object>
     <object>objects\obj_health</object>
+    <object>objects\obj_speaker</object>
+    <object>objects\obj_dialog</object>
+    <object>objects\obj_sign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
