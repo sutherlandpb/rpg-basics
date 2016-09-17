@@ -90,9 +90,12 @@ state = scr_move_state
           <argument>
             <kind>1</kind>
             <string>/// Move the player in step event
-event_inherited();
+//event_inherited();
+depth = -y;
 script_execute(state);
-
+if (obj_player_stats.hp &lt;= 0) {
+    instance_destroy();
+}
 
 </string>
           </argument>

@@ -1,5 +1,9 @@
 ///scr_move_state_dash
 //Move
+if (len == 0) {
+    dir = face * 90;
+}
+
 len = player_speed * 4;
 
 player_horizontal_speed = lengthdir_x(len, dir);
