@@ -22,9 +22,11 @@
     </sprites>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
+    <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\sprite20</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -50,6 +52,8 @@
     <scripts name="helper_scripts">
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_get_face.gml</script>
+      <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_add_exp.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -65,6 +69,7 @@
     <object>objects\obj_wide_wall</object>
     <object>objects\obj_tall_wall</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_health</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

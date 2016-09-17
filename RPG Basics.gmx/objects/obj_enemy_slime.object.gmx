@@ -34,6 +34,7 @@ alarm[0] = room_speed * irandom_range(2, 5);
 sight = 128;
 targetx = 0;
 targety = 0;
+xp_reward = 1;
 </string>
           </argument>
         </arguments>
@@ -56,8 +57,12 @@ targety = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///drops
-instance_create(x, y, obj_exp);
+            <string>
+scr_add_exp(xp_reward);
+// drop a health pot
+if (scr_chance(.2)) {
+    instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
+}
 
 </string>
           </argument>

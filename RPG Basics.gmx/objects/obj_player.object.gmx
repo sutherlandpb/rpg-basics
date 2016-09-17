@@ -102,6 +102,36 @@ if (obj_player_stats.hp &lt;= 0) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_health">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///collect health
+with(other) {
+    instance_destroy();
+}
+
+with (obj_player_stats) {
+    hp = min(hp + 5, maxhp);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_door">
       <action>
         <libid>1</libid>
@@ -152,21 +182,7 @@ with(other) {
     instance_destroy();
 }
 
-with (obj_player_stats) {
-    expr += 1;
-    if (expr &gt;= maxexpr) {
-        level += 1;
-        expr = expr - maxexpr;
-        maxexpr = round(maxexpr * 1.75);
-        maxhp += 2;
-        hp = maxhp;
-        maxstamina +=2;
-        stamina = maxstamina;
-        attack += 1;
-        
-    }
-    
-}
+
 </string>
           </argument>
         </arguments>
