@@ -4,7 +4,7 @@ var animation_speed = .2;
 scr_get_input();
 
 if (dash_key) {
-    state = scr_move_state_dash;
+    state = scr_move_dash_state;
     alarm[0] = room_speed/10;
 }
 

@@ -21,6 +21,7 @@
       <sprite>sprites\spr_player_up</sprite>
     </sprites>
     <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_exp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -29,7 +30,7 @@
   <scripts name="scripts">
     <scripts name="player_states">
       <script>scripts\scr_move_state.gml</script>
-      <script>scripts\scr_move_state_dash.gml</script>
+      <script>scripts\scr_move_dash_state.gml</script>
       <script>scripts\scr_attack_state.gml</script>
       <script>scripts\scr_frozen_state.gml</script>
     </scripts>
@@ -57,6 +58,7 @@
     <object>objects\obj_actor_parent</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
+    <object>objects\obj_exp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
