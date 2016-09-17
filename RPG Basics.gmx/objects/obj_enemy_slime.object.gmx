@@ -35,6 +35,8 @@ sight = 128;
 targetx = 0;
 targety = 0;
 xp_reward = 1;
+bonusxp_chance = .05;
+health_chance = .20;
 </string>
           </argument>
         </arguments>
@@ -60,10 +62,14 @@ xp_reward = 1;
             <string>
 scr_add_exp(xp_reward);
 // drop a health pot
-if (scr_chance(.2)) {
+if (scr_chance(health_chance)) {
     instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
 }
 
+// drop bonus XP
+if (scr_chance(bonusxp_chance)) {
+    instance_create(x, y, obj_exp);
+}
 </string>
           </argument>
         </arguments>

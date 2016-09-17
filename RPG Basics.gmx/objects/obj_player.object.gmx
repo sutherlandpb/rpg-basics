@@ -181,7 +181,7 @@ if (room_exists(other.new_room)) {
 with(other) {
     instance_destroy();
 }
-
+scr_add_exp(10);
 
 </string>
           </argument>
