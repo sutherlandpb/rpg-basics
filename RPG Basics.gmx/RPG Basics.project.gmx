@@ -78,6 +78,7 @@
     <object>objects\obj_sign</object>
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
+    <object>objects\obj_projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
