@@ -54,8 +54,10 @@ move_speed = .25;
             <kind>1</kind>
             <string>/// move towards player
 event_inherited();
-phy_position_x += sign(obj_player.x - x) * move_speed;
-phy_position_y += sign(obj_player.y - y) * move_speed; 
+if (instance_exists(obj_player)) {
+    phy_position_x += sign(obj_player.x - x) * move_speed;
+    phy_position_y += sign(obj_player.y - y) * move_speed; 
+}
 </string>
           </argument>
         </arguments>
@@ -68,7 +70,7 @@ phy_position_y += sign(obj_player.y - y) * move_speed;
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>5</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
