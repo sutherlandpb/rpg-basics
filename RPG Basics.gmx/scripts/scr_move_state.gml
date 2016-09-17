@@ -3,7 +3,9 @@
 var animation_speed = .2;
 scr_get_input();
 
-if (dash_key) {
+if (dash_key && obj_player_stats.stamina >= DASH_COST) {
+    obj_player_stats.stamina -= DASH_COST;
+    obj_player_stats.alarm[0] = room_speed * 2;    
     state = scr_move_dash_state;
     alarm[0] = room_speed/10;
 }
