@@ -22,6 +22,7 @@ if (xaxis == 0 && yaxis == 0) {
     len = 0;
 } else {
     len = player_speed
+    scr_get_face();
 }
 
 //Move
@@ -40,18 +41,18 @@ if (len == 0) {
     image_speed = animation_speed;
 }
 
-//vertical sprites
-if (player_vertical_speed > 0) {
-    sprite_index = spr_player_down;
-} else if (player_vertical_speed < 0) {
-    sprite_index = spr_player_up;
+
+switch (face) {
+    case RIGHT: 
+        sprite_index = spr_player_right;
+        break;
+    case LEFT:
+        sprite_index = spr_player_left; 
+        break;
+    case UP:
+        sprite_index = spr_player_up;
+        break;
+    case DOWN:
+        sprite_index = spr_player_down;
+        break;        
 }
-
-//horizontal sprites
-if (player_horizontal_speed > 0) {
-    sprite_index = spr_player_right;
-} else if (player_horizontal_speed < 0) {
-    sprite_index = spr_player_left;
-}
-
-

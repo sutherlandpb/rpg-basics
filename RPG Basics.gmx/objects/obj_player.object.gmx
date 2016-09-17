@@ -42,6 +42,7 @@ attacked = false;
 scr_get_input();
 
 state = scr_move_state;
+face = RIGHT;
 </string>
           </argument>
         </arguments>
