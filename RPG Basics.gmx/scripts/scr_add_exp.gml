@@ -10,7 +10,8 @@ with (obj_player_stats) {
         hp = maxhp;
         maxstamina +=2;
         stamina = maxstamina;
-        attack += 1;
-        
+        attack += 1;     
+        maxmana += 1;
+        mana = maxmana;
     }    
 }

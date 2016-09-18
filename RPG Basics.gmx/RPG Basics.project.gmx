@@ -29,6 +29,7 @@
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
     <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_mana</sprite>
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
@@ -64,6 +65,7 @@
       <script>scripts\scr_add_exp.gml</script>
       <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_load_game.gml</script>
+      <script>scripts\scr_draw_with_shadow.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -81,6 +83,7 @@
     <object>objects\obj_tall_wall</object>
     <object>objects\obj_door</object>
     <object>objects\obj_health</object>
+    <object>objects\obj_mana</object>
     <object>objects\obj_speaker</object>
     <object>objects\obj_dialog</object>
     <object>objects\obj_sign</object>

@@ -14,6 +14,8 @@ with (obj_player_stats) {
     save_data[? "maxhp"] = maxhp;
     save_data[? "stamina"] = stamina;
     save_data[? "maxstamina"] = maxstamina;
+    save_data[? "mana"] = mana;
+    save_data[? "maxmana"] = maxmana;
     save_data[? "expr"] = expr;
     save_data[? "maxexpr"] = maxexpr;
     save_data[? "level"] = level;

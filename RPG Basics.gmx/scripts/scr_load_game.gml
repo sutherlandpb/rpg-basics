@@ -28,6 +28,8 @@ with (obj_player_stats) {
     maxexpr = save_data[? "maxexpr"];
     level = save_data[? "level"];
     attack = save_data[? "attack"];
+    mana = save_data[? "mana"];
+    maxmana = save_data[? "maxmana"];
         
 }
 ds_map_destroy(save_data);

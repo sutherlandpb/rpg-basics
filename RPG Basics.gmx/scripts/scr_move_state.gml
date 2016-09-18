@@ -15,7 +15,8 @@ if (obj_input.attack_key) {
     state = scr_attack_state;
 }
 
-if (obj_input.spell_key) {
+if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
+    obj_player_stats.mana -= SPELL_COST;
     var p = instance_create(x, y, obj_projectile);
     var xforce = lengthdir_x(20, face * 90);
     var yforce = lengthdir_y(20, face * 90);

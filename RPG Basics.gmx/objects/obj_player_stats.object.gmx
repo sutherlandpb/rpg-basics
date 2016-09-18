@@ -30,6 +30,8 @@ hp = 5;
 maxhp = hp;
 stamina = 10;
 maxstamina = stamina;
+mana = 0;
+maxmana = 0;
 attack = 1;
 ranged_attack = 1;
 expr = 0;
@@ -51,6 +53,29 @@ if (instance_exists(obj_player)) {
 previous_room = room;
 
 room_start_action = NEW_ROOM;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//mana refresh
 </string>
           </argument>
         </arguments>
@@ -109,6 +134,13 @@ if (stamina &lt; maxstamina &amp;&amp; alarm[0] == -1) {
     stamina++;
     alarm[0] = room_speed;
 }
+
+//mana
+if (mana &lt; maxmana &amp;&amp; alarm[1] == -1) {
+    mana++;
+    alarm[1] = room_speed * 4;
+}
+
 
 // pause the game
 if (obj_input.pause_key) {
@@ -191,17 +223,16 @@ room_start_action = NEW_ROOM;
             <string>///draw stats
 var xx = 32;
 var yy = 16;
-var offset = 2;
-draw_set_alpha(0.5);
-draw_set_color(c_black);
-draw_text(xx + offset, yy  + offset, "HP: " + string(hp) + "/" + string(maxhp)); 
-draw_text(xx + offset, (yy * 2)  + offset, "STAMINA: " + string(stamina) + "/" + string(maxstamina)); 
-draw_text(xx + offset, (yy * 3)  + offset, "LEVEL: " + string(level)); 
-draw_set_alpha(1);
-draw_set_color(c_white);
-draw_text(xx, yy, "HP: " + string(hp) + "/" + string(maxhp)); 
-draw_text(xx, yy * 2, "STAMINA: " + string(stamina) + "/" + string(maxstamina)); 
-draw_text(xx, yy * 3, "LEVEL: " + string(level)); 
+var listnum = 1;
+scr_draw_with_shadow(xx, yy * listnum, "HP: " + string(hp) + "/" + string(maxhp));
+scr_draw_with_shadow(xx, yy * ++listnum, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
+if (maxmana &gt;= SPELL_COST) {
+    scr_draw_with_shadow(xx, yy * ++listnum, "MANA: " + string(mana) + "/" + string(maxmana));
+}
+scr_draw_with_shadow(xx, yy * ++listnum, "LEVEL: " + string(level));
+
+
+
 </string>
           </argument>
         </arguments>
