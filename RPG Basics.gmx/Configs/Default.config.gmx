@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="12">
+    <constants number="17">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
@@ -647,6 +647,11 @@
       <constant name="MOVE">0</constant>
       <constant name="ATTACK">1</constant>
       <constant name="IDLE">2</constant>
+      <constant name="CELL_WIDTH">32</constant>
+      <constant name="CELL_HEIGHT">32</constant>
+      <constant name="FLOOR">-5</constant>
+      <constant name="WALL">-6</constant>
+      <constant name="VOID">-7</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -45,6 +45,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
+    <background>background\bg_wall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -85,6 +86,7 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_dialog</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_random_door</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
@@ -104,11 +106,13 @@
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
+    <object>objects\obj_level</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_two</room>
     <room>rooms\rm_pause</room>
+    <room>rooms\rm_random</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
