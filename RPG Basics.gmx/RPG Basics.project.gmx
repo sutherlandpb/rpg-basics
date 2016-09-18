@@ -78,32 +78,32 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_view</object>
-    <object>objects\obj_dash_effect</object>
-    <object>objects\obj_enemy_slime</object>
-    <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_actor_parent</object>
+    <object>objects\obj_axe_sign</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_damage_number</object>
-    <object>objects\obj_player_stats</object>
-    <object>objects\obj_exp</object>
-    <object>objects\obj_wide_wall</object>
-    <object>objects\obj_tall_wall</object>
-    <object>objects\obj_door</object>
-    <object>objects\obj_health</object>
-    <object>objects\obj_mana</object>
-    <object>objects\obj_speaker</object>
+    <object>objects\obj_dash_effect</object>
     <object>objects\obj_dialog</object>
-    <object>objects\obj_sign</object>
-    <object>objects\obj_axe_sign</object>
-    <object>objects\obj_input</object>
-    <object>objects\obj_pause_menu</object>
-    <object>objects\obj_projectile</object>
+    <object>objects\obj_door</object>
+    <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
+    <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_exp</object>
+    <object>objects\obj_health</object>
+    <object>objects\obj_input</object>
+    <object>objects\obj_mana</object>
+    <object>objects\obj_pause_menu</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_player_stats</object>
+    <object>objects\obj_projectile</object>
+    <object>objects\obj_sign</object>
+    <object>objects\obj_speaker</object>
+    <object>objects\obj_tall_wall</object>
+    <object>objects\obj_view</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_item</object>
+    <object>objects\obj_wide_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
