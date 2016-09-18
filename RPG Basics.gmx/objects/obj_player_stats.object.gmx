@@ -189,9 +189,19 @@ room_start_action = NEW_ROOM;
           <argument>
             <kind>1</kind>
             <string>///draw stats
-draw_text(32, 16, "HP: " + string(hp) + "/" + string(maxhp)); 
-draw_text(32, 32, "STAMINA: " + string(stamina) + "/" + string(maxstamina)); 
-draw_text(32, 48, "LEVEL: " + string(level)); 
+var xx = 32;
+var yy = 16;
+var offset = 2;
+draw_set_alpha(0.5);
+draw_set_color(c_black);
+draw_text(xx + offset, yy  + offset, "HP: " + string(hp) + "/" + string(maxhp)); 
+draw_text(xx + offset, (yy * 2)  + offset, "STAMINA: " + string(stamina) + "/" + string(maxstamina)); 
+draw_text(xx + offset, (yy * 3)  + offset, "LEVEL: " + string(level)); 
+draw_set_alpha(1);
+draw_set_color(c_white);
+draw_text(xx, yy, "HP: " + string(hp) + "/" + string(maxhp)); 
+draw_text(xx, yy * 2, "STAMINA: " + string(stamina) + "/" + string(maxstamina)); 
+draw_text(xx, yy * 3, "LEVEL: " + string(level)); 
 </string>
           </argument>
         </arguments>
