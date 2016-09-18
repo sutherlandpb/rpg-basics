@@ -26,34 +26,38 @@
           <argument>
             <kind>1</kind>
             <string>///create level
-show_message("creating level");
+
 //resize
 room_width = (CELL_WIDTH/16) * 720;
 room_height = (CELL_HEIGHT/16) * 720;
-show_message("resized room");
+
 //set the grid width and height
 var width = room_width div CELL_WIDTH;
 var height = room_height div CELL_HEIGHT;
-show_message("creating grid");
+
 //create grid
 grid = ds_grid_create(width, height);
-show_message("grid created");
+
 //fill the grid with void values
 ds_grid_set_region(grid, 0, 0, width - 1, height -1, VOID);
-show_message("voided grid");
+
 //randomize the level
 randomize();
-show_message("randomized");
+
 //create the controller in the center of the grid
 var cx = width div 2;
 var cy = height div 2;
 
+if (instance_exists(obj_player)) {
+    obj_player.phy_position_x = cx * CELL_WIDTH + CELL_WIDTH / 2;
+    obj_player.phy_position_y = cy * CELL_HEIGHT + CELL_HEIGHT / 2;
+}
 //direction of controller (directions 0-3)
 var cdir = irandom(3);
 
 // the odds variable for changing direction
 var odds = 1;
-show_message("making 1000 places");
+
 //create the level using 1000 steps
 repeat (1000) {
     //place a floor tile at the controller position
@@ -73,7 +77,7 @@ repeat (1000) {
     cx = clamp(cx, 1, width - 2);
     cy = clamp(cy, 1, height -2);
 }
-show_message("adding walls");
+
 //add walls if needed
 for (var yy = 1; yy &lt; height - 1; yy++) {
     for (var xx = 1; xx &lt; width - 1; xx++) {
@@ -98,7 +102,7 @@ for (var yy = 1; yy &lt; height - 1; yy++) {
         }
     }
 }
-show_message("drawing");
+var added_player = false;
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++) {
         if (grid[# xx, yy] == FLOOR) {
@@ -108,7 +112,7 @@ for (var yy = 0; yy &lt; height; yy++) {
         }        
     }
 }        
-show_message("done drawing level");
+
 
 </string>
           </argument>

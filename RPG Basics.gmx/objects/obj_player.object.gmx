@@ -136,8 +136,8 @@ if (obj_player_stats.hp &lt;= 0) {
             <string>/// go through the random door
 
 room_goto(rm_random);
-other.x = 64;
-other.y = 64
+
+
 
 </string>
           </argument>
@@ -311,6 +311,7 @@ if (state = scr_attack_state) {
             <string>///set fixed rotation
 phy_fixed_rotation = true;
 persistent = true;
+
 </string>
           </argument>
         </arguments>

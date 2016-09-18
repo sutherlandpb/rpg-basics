@@ -76,6 +76,7 @@
       <script>scripts\scr_draw_with_shadow.gml</script>
       <script>scripts\scr_animation_hit_frame.gml</script>
       <script>scripts\scr_swap_weapons.gml</script>
+      <script>scripts\grid_place_meeting.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

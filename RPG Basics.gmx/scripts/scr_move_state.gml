@@ -48,9 +48,16 @@ if (obj_input.xaxis == 0 && obj_input.yaxis == 0) {
 //Move
 player_horizontal_speed = lengthdir_x(len, dir);
 player_vertical_speed = lengthdir_y(len, dir);
-
-phy_position_x += player_horizontal_speed;
-phy_position_y += player_vertical_speed;
+// check for collisions before moving if we are in a random room
+if (room == rm_random) {
+    if (!grid_place_meeting(phy_position_x + player_horizontal_speed, phy_position_y + player_vertical_speed)) {
+        phy_position_x += player_horizontal_speed;
+        phy_position_y += player_vertical_speed;
+    }
+} else {
+    phy_position_x += player_horizontal_speed;
+    phy_position_y += player_vertical_speed;
+}
 
 // control the sprite
 image_speed = sign(len) * animation_speed;
