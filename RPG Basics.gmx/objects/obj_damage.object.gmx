@@ -151,6 +151,7 @@ if (other.id != creator) {
             <kind>1</kind>
             <string>/// damage player
 if (other.id != creator) {
+    audio_play_sound(snd_player_takes_damage, 9, false);
     obj_player_stats.hp -= damage;
     if (instance_exists(creator)) {
         var dir = point_direction(creator.x,creator.y, other.x, other.y);

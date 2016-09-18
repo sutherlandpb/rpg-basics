@@ -72,7 +72,7 @@ yaxis = 0;
             <kind>1</kind>
             <string>///do drops and xp
 scr_add_exp(xp_reward);
-
+audio_play_sound(snd_enemy_die, 5, false);
 // we have our drops ordered from rare to common
 if (scr_chance(bonusxp_chance)) {
     // drop bonus XP

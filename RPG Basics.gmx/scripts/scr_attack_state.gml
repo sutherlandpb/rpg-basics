@@ -23,7 +23,7 @@ if (image_index >= 3 && attacked == false) {
             yy = y + 2;
             break;        
     }
-    
+    audio_play_sound(snd_sword_attack, 8, false);    
     attacked = true;
     var damage = instance_create(xx, yy, obj_damage);    
     damage.creator = id;

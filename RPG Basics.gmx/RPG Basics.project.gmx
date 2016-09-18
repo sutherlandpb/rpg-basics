@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_enemy_die</sound>
+    <sound>sound\snd_expr</sound>
+    <sound>sound\snd_player_takes_damage</sound>
+    <sound>sound\snd_sword_attack</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\sprite_bg_tile</sprite>
