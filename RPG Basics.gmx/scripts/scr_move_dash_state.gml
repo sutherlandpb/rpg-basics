@@ -1,5 +1,6 @@
 ///scr_move_state_dash
 //Move
+movement = MOVE;
 if (len == 0) {
     dir = face * 90;
 }

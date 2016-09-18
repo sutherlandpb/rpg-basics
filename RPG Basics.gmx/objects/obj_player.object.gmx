@@ -40,6 +40,17 @@ attacked = false;
 
 state = scr_move_state;
 face = RIGHT;
+movement = MOVE;
+
+//create the sprite array 
+sprite[RIGHT, MOVE] = spr_player_right;
+sprite[UP, MOVE] = spr_player_up;
+sprite[LEFT, MOVE] = spr_player_left;
+sprite[DOWN, MOVE] = spr_player_down;
+sprite[RIGHT, ATTACK] = spr_player_attack_right;
+sprite[UP, ATTACK] = spr_player_attack_up;
+sprite[LEFT, ATTACK] = spr_player_attack_left;
+sprite[DOWN, ATTACK] = spr_player_attack_down;
 </string>
           </argument>
         </arguments>
@@ -90,6 +101,9 @@ state = scr_move_state
 //event_inherited();
 depth = -y;
 script_execute(state);
+
+sprite_index = sprite[face, movement];
+
 if (obj_player_stats.hp &lt;= 0) {
     instance_destroy();
 }

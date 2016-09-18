@@ -1,5 +1,5 @@
 ///scr_move_state
-
+movement = MOVE;
 var animation_speed = .2;
 scr_get_input();
 
@@ -53,18 +53,3 @@ if (len == 0) {
     image_speed = animation_speed;
 }
 
-
-switch (face) {
-    case RIGHT: 
-        sprite_index = spr_player_right;
-        break;
-    case LEFT:
-        sprite_index = spr_player_left; 
-        break;
-    case UP:
-        sprite_index = spr_player_up;
-        break;
-    case DOWN:
-        sprite_index = spr_player_down;
-        break;        
-}
