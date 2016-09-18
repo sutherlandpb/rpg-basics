@@ -106,7 +106,7 @@ var added_player = false;
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++) {
         if (grid[# xx, yy] == FLOOR) {
-            tile_add(bg_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);             
+            tile_add(bg_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 99999);             
         } else if (grid[# xx, yy] == WALL) {
             tile_add(bg_wall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);                             
         }        
