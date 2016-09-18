@@ -20,6 +20,12 @@
       <sprite>sprites\spr_player_shadow</sprite>
       <sprite>sprites\spr_player_up</sprite>
     </sprites>
+    <sprite>sprites\spr_chinlin_run_up</sprite>
+    <sprite>sprites\spr_chinlin_stand_down</sprite>
+    <sprite>sprites\spr_chinlin_stand_right</sprite>
+    <sprite>sprites\spr_chinlin_stand_up</sprite>
+    <sprite>sprites\spr_chinlin_run_down</sprite>
+    <sprite>sprites\spr_chinlin_run_right</sprite>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
     <sprite>sprites\spr_health</sprite>
@@ -66,6 +72,7 @@
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_actor_parent</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
@@ -80,6 +87,7 @@
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
     <object>objects\obj_projectile</object>
+    <object>objects\obj_enemy_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

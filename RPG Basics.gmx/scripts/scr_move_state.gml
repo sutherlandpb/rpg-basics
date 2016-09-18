@@ -34,7 +34,7 @@ if (obj_input.xaxis == 0 && obj_input.yaxis == 0) {
     len = 0;
 } else {
     len = player_speed
-    scr_get_face();
+    scr_get_face(dir);
 }
 
 //Move

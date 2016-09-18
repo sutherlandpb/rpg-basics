@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="10">
+    <constants number="11">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
@@ -645,6 +645,7 @@
       <constant name="LOAD">2</constant>
       <constant name="MOVE">0</constant>
       <constant name="ATTACK">1</constant>
+      <constant name="IDLE">2</constant>
     </constants>
   </ConfigConstants>
 </Config>
