@@ -136,8 +136,8 @@ if (obj_player_stats.hp &lt;= 0) {
             <string>/// go through the random door
 
 room_goto(rm_random);
-room_restart();
-
+other.x = 64;
+other.y = 64
 
 </string>
           </argument>
