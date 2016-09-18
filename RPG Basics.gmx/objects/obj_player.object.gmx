@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// player create
+if (instance_number(obj_player) &gt; 1) {
+    instance_destroy();
+}
 event_inherited();
 hp = 20;
 player_speed = 4;
