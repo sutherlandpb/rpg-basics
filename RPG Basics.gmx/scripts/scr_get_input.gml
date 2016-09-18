@@ -5,14 +5,15 @@ up_key = keyboard_check(vk_up) || keyboard_check(ord('W'));
 down_key = keyboard_check(vk_down) || keyboard_check(ord('S'));
 dash_key = keyboard_check_pressed(vk_space);
 attack_key = keyboard_check_pressed(vk_lalt);
-pause_key = keyboard_check_pressed(vk_escape);
+swap_key = keyboard_check_pressed(vk_lshift);
 spell_key = keyboard_check_pressed(vk_lcontrol);
+pause_key = keyboard_check_pressed(vk_escape);
 //get the axis
 xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);
 
 //check for gamepad input
-if (xaxis == 0 && yaxis == 0 && attack_key == 0 && dash_key == 0 && pause_key == 0 && spell_key == 0 && gamepad_is_connected(0)) {
+if (xaxis == 0 && yaxis == 0 && attack_key == 0 && dash_key == 0 && pause_key == 0 && spell_key == 0 && swap_key == 0 && gamepad_is_connected(0)) {
     //get the axis
     gamepad_set_axis_deadzone(0, .35);
     xaxis = gamepad_axis_value(0, gp_axislh);
@@ -21,4 +22,5 @@ if (xaxis == 0 && yaxis == 0 && attack_key == 0 && dash_key == 0 && pause_key ==
     attack_key = gamepad_button_check_pressed(0, gp_face3);
     pause_key = gamepad_button_check_pressed(0, gp_start);
     spell_key = gamepad_button_check_pressed(0, gp_face4);
+    swap_key = gamepad_button_check_pressed(0, gp_face2);
 }

@@ -14,6 +14,13 @@ if (obj_input.attack_key) {
     image_index = 0;
     state = scr_attack_state;
 }
+if (obj_input.swap_key && obj_player_stats.level >= 5) {
+    var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
+    if (place_meeting(x, y + 4, nearest_weapon)) {
+        scr_swap_weapons(nearest_weapon);           
+    }
+    
+}
 
 if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
     obj_player_stats.mana -= SPELL_COST;
