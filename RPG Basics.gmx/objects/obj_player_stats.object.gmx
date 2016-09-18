@@ -37,6 +37,7 @@ ranged_attack = 1;
 expr = 0;
 maxexpr = 3;
 level = 1;
+weapon = obj_sword;
 
 
 draw_set_color(c_white);

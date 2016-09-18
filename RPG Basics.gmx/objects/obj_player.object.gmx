@@ -39,7 +39,6 @@ dir = 0;
 image_speed = 0;
 xaxis = 0;
 yaxis = 0;
-attacked = false;
 ranged_attack = 5;
 
 state = scr_move_state;
@@ -256,7 +255,6 @@ scr_add_exp(10);
             <string>///change back to move state
 
 if (state = scr_attack_state) {
-    attacked = false;
     state = scr_move_state;
 }
 
