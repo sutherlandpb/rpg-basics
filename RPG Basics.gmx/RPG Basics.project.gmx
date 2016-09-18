@@ -86,6 +86,7 @@
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_actor_parent</object>
     <object>objects\obj_damage</object>
+    <object>objects\obj_damage_number</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_exp</object>
     <object>objects\obj_wide_wall</object>

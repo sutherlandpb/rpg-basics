@@ -115,6 +115,10 @@ with (other) {
             <kind>1</kind>
             <string>/// damage actor
 if (other.id != creator) {
+    if (damage &gt;= other.hp) {
+        //do this so damage numbers match actual hp for mobs
+        damage = other.hp;
+    }
     other.hp -= damage;
     if (instance_exists(creator)) {
         var dir = point_direction(creator.x,creator.y, other.x, other.y);
@@ -126,6 +130,8 @@ if (other.id != creator) {
     with(other) {
         physics_apply_impulse(x, y, xforce, yforce);
     }
+    var num = instance_create(other.x, other.y, obj_damage_number);
+    num.damage = damage;
 }
 </string>
           </argument>
