@@ -32,11 +32,15 @@ move_speed = .5;
 state = scr_enemy_idle_state;
 alarm[0] = room_speed * irandom_range(2, 5);
 sight = 128;
-targetx = 0;
-targety = 0;
+xaxis = 0;
+yaxis = 0;
+
+//reward values
 xp_reward = 1;
 bonusxp_chance = .05;
+mana_chance = .10;
 health_chance = .20;
+
 </string>
           </argument>
         </arguments>

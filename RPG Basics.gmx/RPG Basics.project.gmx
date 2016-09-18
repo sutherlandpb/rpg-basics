@@ -48,6 +48,7 @@
       <scripts name="enemy_helper_scripts">
         <script>scripts\scr_enemy_choose_next_state.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_move_axis.gml</script>
       </scripts>
     </scripts>
     <scripts name="helper_scripts">
