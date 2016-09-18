@@ -78,7 +78,11 @@ instance_destroy();
             <kind>1</kind>
             <string>/// damage
 if (other.id != creator) {
-    other.hp -= creator.ranged_attack;
+    var damage = creator.ranged_attack;
+    if (damage &gt;= other.hp) {
+        damage = other.hp;
+    }
+    other.hp -= damage;
     
     //apply knockback
     var dir = point_direction(0,0, phy_speed_x, phy_speed_y);   
@@ -87,7 +91,8 @@ if (other.id != creator) {
     with(other) {
         physics_apply_impulse(x, y, xforce, yforce);
     }
-    
+    var num = instance_create(other.x, other.y, obj_damage_number);
+    num.damage = damage;
     alarm[0] = 1;   
 }
 </string>
