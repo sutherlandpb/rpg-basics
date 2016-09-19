@@ -102,13 +102,17 @@ for (var yy = 1; yy &lt; height - 1; yy++) {
         }
     }
 }
-
+// draw the floor
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++) {
         if (grid[# xx, yy] == FLOOR) {
             tile_add(bg_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 99999);             
-        } else if (grid[# xx, yy] == WALL) {
-            tile_add(bg_wall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);                             
+            var odds = 20;   
+            var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
+            var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
+            if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; irandom(odds) == odds) {
+                instance_create(ex, ey, obj_enemy_slime);
+            }
         }        
     }
 }        

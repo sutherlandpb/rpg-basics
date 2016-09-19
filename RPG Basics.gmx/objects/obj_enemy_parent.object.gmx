@@ -28,6 +28,8 @@
             <string>///initialize
 event_inherited();
 
+depth = -y
+
 //defaults
 image_speed = .1;
 move_speed = .5;
