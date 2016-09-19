@@ -30,9 +30,11 @@
 title = "Game Paused";
 option[0] = "Return";
 option[1] = "Save"; 
-option[2] = "Load";
-option[3] = "Restart";
-option[4] = "Quit";
+option[2] = "Save Custom"; 
+option[3] = "Load";
+option[4] = "Load Custom";
+option[5] = "Restart";
+option[6] = "Quit";
 
 //menu index
 menu_index = 0;
@@ -104,22 +106,32 @@ if (alarm[0] &lt;= 0) {
     if(obj_input.dash_key) {
         obj_input.dash_key = false;
         switch (menu_index) {
-            case 0: 
+            case 0: //return
                 obj_player_stats.room_start_action = RETURN;
                 room_goto(obj_player_stats.previous_room);
                 break;
-            case 1: 
-                scr_save_game();                
+            case 1: //save
+                scr_save_game("savegame");                
                 option[1] = "Game Was Saved!";
                 break;
-            case 2: 
+            case 2: //save custom
+                scr_save_game(get_string("What is the name of your save?", "savegame"));                
+                option[1] = "Game Was Saved!";
+                break;
+            case 3: //Load
                 obj_player_stats.room_start_action = LOAD;
+                obj_player_stats.save_name = "savegame";
                 room_goto(obj_player_stats.previous_room);
                 break;
-            case 3:
+            case 4: //Load custom
+                obj_player_stats.save_name = get_string("What is the name of your save?", "savegame");
+                obj_player_stats.room_start_action = LOAD;                    
+                room_goto(obj_player_stats.previous_room);
+                break;
+            case 5: //restart
                 game_restart();
                 break;    
-            case 4: 
+            case 6: //quit
                 game_end();
                 break;
             default: 

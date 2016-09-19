@@ -1,5 +1,7 @@
-///scr_load_game()
-var file = file_text_open_read(working_directory + "savegame.txt");
+///scr_load_game(name)
+var save_name = argument[0];
+
+var file = file_text_open_read(working_directory + save_name + ".txt");
 var save_string = file_text_read_string(file);
 file_text_close(file);
 save_string = base64_decode(save_string);

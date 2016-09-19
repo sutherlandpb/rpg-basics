@@ -41,6 +41,7 @@ xaxis = 0;
 yaxis = 0;
 ranged_attack = 5;
 
+save_name = "savegame"
 state = scr_move_state;
 face = RIGHT;
 movement = MOVE;

@@ -198,7 +198,7 @@ switch (room_start_action) {
         }
         break;
     case LOAD: 
-        scr_load_game();
+        scr_load_game(obj_player_stats.save_name);
         break;    
 }
 room_persistent = false;

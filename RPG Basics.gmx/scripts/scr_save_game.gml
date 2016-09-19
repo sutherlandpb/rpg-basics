@@ -1,5 +1,5 @@
-///scr_save_game()
-
+///scr_save_game(name)
+var save_name = argument[0];
 // player object exists
 if (!instance_exists(obj_player_stats)) {
     exit;
@@ -25,7 +25,7 @@ with (obj_player_stats) {
 var save_string = json_encode(save_data);
 ds_map_destroy(save_data);
 save_string = base64_encode(save_string);
-var file = file_text_open_write(working_directory + "savegame.txt");
+var file = file_text_open_write(working_directory + save_name + ".txt");
 file_text_write_string(file, save_string);
 file_text_close(file);
 
