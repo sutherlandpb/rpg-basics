@@ -46,6 +46,7 @@
   <backgrounds name="background">
     <background>background\bg_tile</background>
     <background>background\bg_wall</background>
+    <background>background\bg_wall_tiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
