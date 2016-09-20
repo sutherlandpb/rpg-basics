@@ -87,6 +87,10 @@ if (scr_chance(bonusxp_chance)) {
     instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
 }
 
+//remove yourself from the enemy count
+if (room == rm_random &amp;&amp; instance_exists(obj_level)) {    
+    obj_level.enemy_count = max(obj_level.enemy_count - 1, 0);    
+}
 
 
 </string>

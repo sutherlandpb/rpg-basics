@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///create level
-
+max_enemy_count = 0;
+enemy_count = 0;
 //resize
 room_width = (CELL_WIDTH/16) * 720;
 room_height = (CELL_HEIGHT/16) * 720;
@@ -114,7 +115,7 @@ for (var yy = 0; yy &lt; height; yy++) {
             var roll = irandom(odds);
             var roll2 = irandom(odds);
             if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; roll == odds) {
-                if (have_placed_door){
+                if (have_placed_door){                    
                     if (roll2 &gt; odds -1){                    
                         scr_make_purple_slime(ex, ey);
                     } else if (roll2 &gt; odds - 3) { 
@@ -124,6 +125,8 @@ for (var yy = 0; yy &lt; height; yy++) {
                     } else {
                         instance_create(ex, ey, obj_enemy_slime);
                     }
+                    enemy_count++;
+                    max_enemy_count++;
                 } else {                
                     instance_create(ex , ey, obj_exit_door);
                     have_placed_door = true; 
@@ -210,6 +213,33 @@ for (var yy = 0; yy &lt; height * 2; yy++){
     }
 }
 obj_player_stats.random_count += 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw the enemy count
+var xx = 400
+var yy = 480
+
+scr_draw_with_shadow(xx, yy, "ENEMIES LEFT: " + string(enemy_count) + "/" + string(max_enemy_count));
 </string>
           </argument>
         </arguments>

@@ -151,11 +151,14 @@ if (obj_input.pause_key) {
         if (instance_exists(obj_player)) {
             obj_player.persistent = false;
         }
+        previous_room = room;
+        /*
         if (room != rm_random) {
             previous_room = room;
         } else {
             previous_room = rm_one;
         }
+        */
         room_persistent = true;
         room_goto(rm_pause);    
     } else {    
