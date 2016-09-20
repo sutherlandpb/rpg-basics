@@ -128,7 +128,14 @@ if (other.id != creator) {
     var xforce = lengthdir_x(knockback, dir);
     var yforce = lengthdir_y(knockback, dir);
     with(other) {
-        physics_apply_impulse(x, y, xforce, yforce);
+        if (room == rm_random) {
+            if (!grid_place_meeting(phy_position_x + xforce, phy_position_y + yforce)) {
+                phy_position_x += xforce;
+                phy_position_y += yforce;
+            }
+        } else {    
+            physics_apply_impulse(x, y, xforce, yforce);
+        }
     }
     var num = instance_create(other.x, other.y, obj_damage_number);
     num.damage = damage;
