@@ -102,6 +102,7 @@ for (var yy = 1; yy &lt; height - 1; yy++) {
         }
     }
 }
+var have_placed_door = false;
 // draw the floor
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++) {
@@ -111,7 +112,12 @@ for (var yy = 0; yy &lt; height; yy++) {
             var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
             var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
             if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; irandom(odds) == odds) {
-                instance_create(ex, ey, obj_enemy_slime);
+                if (have_placed_door){
+                    instance_create(ex, ey, obj_enemy_slime);
+                } else {                
+                    instance_create(ex , ey, obj_exit_door);
+                    have_placed_door = true; 
+                }
             }
         }        
     }
@@ -193,7 +199,7 @@ for (var yy = 0; yy &lt; height * 2; yy++){
         }
     }
 }
-
+obj_player_stats.random_count += 1;
 </string>
           </argument>
         </arguments>

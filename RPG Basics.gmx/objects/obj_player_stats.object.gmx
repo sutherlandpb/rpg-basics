@@ -54,6 +54,7 @@ if (instance_exists(obj_player)) {
 previous_room = room;
 
 room_start_action = NEW_ROOM;
+random_count = 0;
 </string>
           </argument>
         </arguments>
@@ -253,6 +254,8 @@ if (maxmana &gt;= SPELL_COST) {
     bary += offset * 2.8;
     draw_healthbar(barx, bary, barx + barlength, bary + offset, manapercent, c_ltgray, c_gray, c_blue, 0, true, true);
 }
+
+scr_draw_with_shadow(xx, yy * ++listnum, "RANDOM COUNT: " + string(random_count));
 </string>
           </argument>
         </arguments>

@@ -38,6 +38,7 @@
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_exit_door</sprite>
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_dialog_box</sprite>
     <sprite>sprites\spr_sword</sprite>
@@ -89,6 +90,7 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_dialog</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_exit_door</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
