@@ -1,4 +1,7 @@
 ///scr_move_axis
+if (enemy_type == 1) {
+    sprite_index = active_sprite;
+} 
 var dir = point_direction(0, 0, xaxis, yaxis);
 var hspd = lengthdir_x(move_speed, dir);
 var vspd = lengthdir_y(move_speed, dir);

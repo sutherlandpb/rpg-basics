@@ -44,6 +44,8 @@
     <sprite>sprites\spr_dialog_box</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_axe</sprite>
+    <sprite>sprites\spr_bat</sprite>
+    <sprite>sprites\spr_bat_rest</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -98,6 +100,7 @@
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_enemy_bat</object>
     <object>objects\obj_exp</object>
     <object>objects\obj_50_xp</object>
     <object>objects\obj_health</object>

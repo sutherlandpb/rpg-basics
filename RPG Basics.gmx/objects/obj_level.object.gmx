@@ -122,6 +122,8 @@ for (var yy = 0; yy &lt; height; yy++) {
                         scr_make_red_slime(ex, ey);
                     } else if (roll2 &gt; odds - 6) {  
                         instance_create(ex, ey, obj_enemy_chinlin);
+                    } else if (roll2 &gt; odds - 10) {
+                        instance_create(ex, ey, obj_enemy_bat);
                     } else {
                         instance_create(ex, ey, obj_enemy_slime);
                     }

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///initialize
 event_inherited();
-
+enemy_type = 0;
 depth = -y
 
 //defaults
