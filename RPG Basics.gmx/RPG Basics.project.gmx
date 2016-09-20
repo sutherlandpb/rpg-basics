@@ -80,6 +80,8 @@
       <script>scripts\scr_swap_weapons.gml</script>
       <script>scripts\grid_place_meeting.gml</script>
       <script>scripts\scr_make_blue_slime.gml</script>
+      <script>scripts\scr_move_if_possible.gml</script>
+      <script>scripts\scr_knockback_if_possible.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

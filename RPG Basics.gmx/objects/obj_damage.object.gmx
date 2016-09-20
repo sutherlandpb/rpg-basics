@@ -174,16 +174,7 @@ if (other.id != creator) {
     
     var xforce = lengthdir_x(knockback, dir);
     var yforce = lengthdir_y(knockback, dir);
-    with(other) {
-        if (room == rm_random) {
-            if (!grid_place_meeting(phy_position_x + xforce, phy_position_y + yforce)) {
-                phy_position_x += xforce;
-                phy_position_y += yforce;
-            }
-        } else {    
-            physics_apply_impulse(x, y, xforce, yforce);
-        }
-    }
+    scr_knockback_if_possible(xforce, yforce, other)
 }
 </string>
           </argument>
