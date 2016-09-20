@@ -7,7 +7,15 @@ if (hspd != 0) {
 }
 scr_get_face(dir);
 movement = MOVE;
-phy_position_x += hspd;
-phy_position_y += vspd;
+
+if (room == rm_random) {
+    if (!grid_place_meeting(phy_position_x + hspd, phy_position_y + vspd)) {
+        phy_position_x += hspd;
+        phy_position_y += vspd;    
+    }
+} else {
+    phy_position_x += hspd;
+    phy_position_y += vspd;
+}
 
 
