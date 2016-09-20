@@ -33,6 +33,7 @@
     <sprite>sprites\spr_chinlin_run_right</sprite>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
+    <sprite>sprites\spr_50_xp</sprite>
     <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_mana</sprite>
     <sprite>sprites\spr_wide_wall</sprite>
@@ -98,6 +99,7 @@
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
     <object>objects\obj_exp</object>
+    <object>objects\obj_50_xp</object>
     <object>objects\obj_health</object>
     <object>objects\obj_input</object>
     <object>objects\obj_level</object>
@@ -115,6 +117,7 @@
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
+    <object>objects\obj_item</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

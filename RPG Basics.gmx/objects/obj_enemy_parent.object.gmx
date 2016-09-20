@@ -75,8 +75,17 @@ yaxis = 0;
             <string>///do drops and xp
 scr_add_exp(xp_reward);
 audio_play_sound(snd_enemy_die, 5, false);
+last_enemy = false;
+//remove yourself from the enemy count
+if (room == rm_random &amp;&amp; instance_exists(obj_level)) {    
+    obj_level.enemy_count = max(obj_level.enemy_count - 1, 0);    
+    last_enemy = (obj_level.enemy_count == 0);
+}
+
 // we have our drops ordered from rare to common
-if (scr_chance(bonusxp_chance)) {
+if (last_enemy) {
+    instance_create(x, y, obj_50_xp);
+} else if (scr_chance(bonusxp_chance)) {
     // drop bonus XP
     instance_create(x, y, obj_exp);
 } else if (scr_chance(mana_chance)) {
@@ -87,10 +96,6 @@ if (scr_chance(bonusxp_chance)) {
     instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
 }
 
-//remove yourself from the enemy count
-if (room == rm_random &amp;&amp; instance_exists(obj_level)) {    
-    obj_level.enemy_count = max(obj_level.enemy_count - 1, 0);    
-}
 
 
 </string>
