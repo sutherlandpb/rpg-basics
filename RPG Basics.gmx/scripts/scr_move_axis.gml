@@ -1,5 +1,5 @@
 ///scr_move_axis
-if (enemy_type == 1) {
+if (enemy_type == ENEMY_HAS_IDLE) {
     sprite_index = active_sprite;
 } 
 var dir = point_direction(0, 0, xaxis, yaxis);

@@ -46,6 +46,7 @@
     <sprite>sprites\spr_axe</sprite>
     <sprite>sprites\spr_bat</sprite>
     <sprite>sprites\spr_bat_rest</sprite>
+    <sprite>sprites\spr_flame</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>

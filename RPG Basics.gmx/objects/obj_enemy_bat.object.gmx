@@ -43,7 +43,7 @@ bonusxp_chance = .05;
 mana_chance = .10;
 health_chance = .20;
 
-enemy_type = 1;
+enemy_type = ENEMY_HAS_IDLE;
 rest_sprite = spr_bat_rest;
 active_sprite = spr_bat;
 </string>
