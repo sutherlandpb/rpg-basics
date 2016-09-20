@@ -25,8 +25,8 @@ if (obj_input.swap_key && obj_player_stats.level >= 5) {
 if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
     obj_player_stats.mana -= SPELL_COST;
     var p = instance_create(x, y, obj_projectile);
-    var xforce = lengthdir_x(20, face * 90);
-    var yforce = lengthdir_y(20, face * 90);
+    var xforce = lengthdir_x(15, face * 90);
+    var yforce = lengthdir_y(15, face * 90);
     p.creator = id;
     with(p) {
         physics_apply_impulse(x, y, xforce, yforce);
