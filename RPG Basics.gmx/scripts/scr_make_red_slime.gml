@@ -1,4 +1,4 @@
-///scr_make_blue_slime(x, y)
+///scr_make_red_slime(x, y)
 var xx = argument[0];
 var yy = argument[1];
 var slime = instance_create(xx, yy, obj_enemy_slime);

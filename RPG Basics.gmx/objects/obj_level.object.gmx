@@ -111,9 +111,19 @@ for (var yy = 0; yy &lt; height; yy++) {
             var odds = 20;   
             var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
             var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
-            if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; irandom(odds) == odds) {
+            var roll = irandom(odds);
+            var roll2 = irandom(odds);
+            if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; roll == odds) {
                 if (have_placed_door){
-                    instance_create(ex, ey, obj_enemy_slime);
+                    if (roll2 &gt; odds -1){                    
+                        scr_make_purple_slime(ex, ey);
+                    } else if (roll2 &gt; odds - 3) { 
+                        scr_make_red_slime(ex, ey);
+                    } else if (roll2 &gt; odds - 6) {  
+                        instance_create(ex, ey, obj_enemy_chinlin);
+                    } else {
+                        instance_create(ex, ey, obj_enemy_slime);
+                    }
                 } else {                
                     instance_create(ex , ey, obj_exit_door);
                     have_placed_door = true; 
