@@ -34,7 +34,7 @@ move_speed = .6;
 
 attack = 1;
 hp = 3;
-sight = 128;
+sight = 90;
 knockback = 5;
 
 //reward values
