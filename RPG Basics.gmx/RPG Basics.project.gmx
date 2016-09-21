@@ -47,6 +47,7 @@
     <sprite>sprites\spr_bat</sprite>
     <sprite>sprites\spr_bat_rest</sprite>
     <sprite>sprites\spr_flame</sprite>
+    <sprite>sprites\spr_joystick</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -122,6 +123,7 @@
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
     <object>objects\obj_item</object>
+    <object>objects\obj_joystick</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
