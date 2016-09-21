@@ -29,6 +29,10 @@ if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
     var yforce = lengthdir_y(15, face * 90);
     p.creator = id;
     with(p) {
+        //yeah my sprite faces left, it should face right
+        if (xforce != 0) {
+            image_xscale = -1 * sign(xforce);
+        }
         physics_apply_impulse(x, y, xforce, yforce);
     }    
 }
