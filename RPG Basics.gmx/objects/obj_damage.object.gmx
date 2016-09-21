@@ -96,6 +96,42 @@ with (other) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// damage player
+if (other.id != creator) {
+    audio_play_sound(snd_player_takes_damage, 9, false);
+    obj_player_stats.hp -= damage;
+    if (instance_exists(creator)) {
+        var dir = point_direction(creator.x,creator.y, other.x, other.y);
+    } else {
+        var dir = point_direction(x, y, other.x, other.y);
+    }   
+    
+    var xforce = lengthdir_x(knockback, dir);
+    var yforce = lengthdir_y(knockback, dir);
+    scr_knockback_if_possible(xforce, yforce, other)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_actor_parent">
       <action>
         <libid>1</libid>
@@ -130,42 +166,6 @@ if (other.id != creator) {
     scr_knockback_if_possible(xforce, yforce, other);
     var num = instance_create(other.x, other.y, obj_damage_number);
     num.damage = damage;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// damage player
-if (other.id != creator) {
-    audio_play_sound(snd_player_takes_damage, 9, false);
-    obj_player_stats.hp -= damage;
-    if (instance_exists(creator)) {
-        var dir = point_direction(creator.x,creator.y, other.x, other.y);
-    } else {
-        var dir = point_direction(x, y, other.x, other.y);
-    }   
-    
-    var xforce = lengthdir_x(knockback, dir);
-    var yforce = lengthdir_y(knockback, dir);
-    scr_knockback_if_possible(xforce, yforce, other)
 }
 </string>
           </argument>

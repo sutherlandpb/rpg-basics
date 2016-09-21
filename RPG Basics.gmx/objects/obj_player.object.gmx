@@ -118,65 +118,6 @@ if (obj_player_stats.hp &lt;= 0) {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_50_xp">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///collect exp
-with(other) {
-    instance_destroy();
-}
-audio_play_sound(snd_expr, 6, false);
-audio_play_sound(snd_expr, 6, false);
-audio_play_sound(snd_expr, 6, false);
-scr_add_exp(50);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_exit_door">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// go through the door
-if (room_exists(other.new_room)) {
-    room_goto(other.new_room);
-    x = other.new_x;
-    y = other.new_y;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_random_door">
       <action>
         <libid>1</libid>
@@ -266,7 +207,7 @@ with (obj_player_stats) {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_door">
+    <event eventtype="4" ename="obj_50_xp">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -283,12 +224,15 @@ with (obj_player_stats) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// go through the door
-if (room_exists(other.new_room)) {
-    room_goto(other.new_room);
-    x = other.new_x;
-    y = other.new_y;
+            <string>///collect exp
+with(other) {
+    instance_destroy();
 }
+audio_play_sound(snd_expr, 6, false);
+audio_play_sound(snd_expr, 6, false);
+audio_play_sound(snd_expr, 6, false);
+scr_add_exp(50);
+
 </string>
           </argument>
         </arguments>
@@ -320,6 +264,62 @@ audio_play_sound(snd_expr, 6, false);
 audio_play_sound(snd_expr, 6, false);
 scr_add_exp(10);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_exit_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// go through the door
+if (room_exists(other.new_room)) {
+    room_goto(other.new_room);
+    x = other.new_x;
+    y = other.new_y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// go through the door
+if (room_exists(other.new_room)) {
+    room_goto(other.new_room);
+    x = other.new_x;
+    y = other.new_y;
+}
 </string>
           </argument>
         </arguments>

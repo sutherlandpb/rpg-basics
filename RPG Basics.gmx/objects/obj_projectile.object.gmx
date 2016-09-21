@@ -87,45 +87,6 @@ if (room == rm_random){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_actor_parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// damage
-if (other.id != creator) {
-    var damage = creator.ranged_attack;
-    if (damage &gt;= other.hp) {
-        damage = other.hp;
-    }
-    other.hp -= damage;
-    
-    //apply knockback
-    var dir = point_direction(0,0, phy_speed_x, phy_speed_y);   
-    var xforce = lengthdir_x(knockback, dir);
-    var yforce = lengthdir_y(knockback, dir);
-    scr_knockback_if_possible(xforce, yforce, other);    
-    var num = instance_create(other.x, other.y, obj_damage_number);
-    num.damage = damage;
-    alarm[0] = 1;   
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_wall">
       <action>
         <libid>1</libid>
@@ -177,6 +138,45 @@ if (other.id != creator) {
     var xforce = lengthdir_x(knockback, dir);
     var yforce = lengthdir_y(knockback, dir);
     scr_knockback_if_possible(xforce, yforce, other);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_actor_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// damage
+if (other.id != creator) {
+    var damage = creator.ranged_attack;
+    if (damage &gt;= other.hp) {
+        damage = other.hp;
+    }
+    other.hp -= damage;
+    
+    //apply knockback
+    var dir = point_direction(0,0, phy_speed_x, phy_speed_y);   
+    var xforce = lengthdir_x(knockback, dir);
+    var yforce = lengthdir_y(knockback, dir);
+    scr_knockback_if_possible(xforce, yforce, other);    
+    var num = instance_create(other.x, other.y, obj_damage_number);
+    num.damage = damage;
+    alarm[0] = 1;   
 }
 </string>
           </argument>
