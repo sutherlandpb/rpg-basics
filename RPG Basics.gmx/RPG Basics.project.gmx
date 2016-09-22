@@ -48,6 +48,7 @@
     <sprite>sprites\spr_bat_rest</sprite>
     <sprite>sprites\spr_flame</sprite>
     <sprite>sprites\spr_joystick</sprite>
+    <sprite>sprites\spr_big_skeleton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -102,6 +103,7 @@
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_big_skeleton</object>
     <object>objects\obj_enemy_bat</object>
     <object>objects\obj_exp</object>
     <object>objects\obj_50_xp</object>

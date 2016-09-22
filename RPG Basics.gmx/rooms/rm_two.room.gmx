@@ -124,6 +124,7 @@
     <instance objName="obj_enemy_chinlin" x="96" y="288" name="inst_F5A25EE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_weapon_item" x="384" y="256" name="inst_9914EF75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_axe_sign" x="384" y="256" name="inst_0A9FC1A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_big_skeleton" x="416" y="128" name="inst_0B0A0A91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
