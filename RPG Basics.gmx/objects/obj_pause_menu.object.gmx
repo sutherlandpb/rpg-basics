@@ -92,7 +92,7 @@ if (alarm[0] &lt;= 0) {
         } else {
             menu_index = 0;
         }
-        alarm[0] = room_speed / 6;
+        alarm[0] = room_speed / 3;
     }
     if (obj_input.up_key || obj_input.yaxis &lt; -.5) {
        if (menu_index &gt; 0) {
@@ -100,7 +100,7 @@ if (alarm[0] &lt;= 0) {
         } else {
             menu_index = array_length_1d(option) - 1;
         }
-        alarm[0] = room_speed / 6;
+        alarm[0] = room_speed / 3;
     }
     
     if(obj_input.dash_key) {

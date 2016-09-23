@@ -5,9 +5,9 @@ scr_get_input();
 
 if (obj_input.dash_key && obj_player_stats.stamina >= DASH_COST) {
     obj_player_stats.stamina -= DASH_COST;
-    obj_player_stats.alarm[0] = room_speed * 2;    
+    obj_player_stats.alarm[0] = room_speed / 4;    
     state = scr_move_dash_state;
-    alarm[0] = room_speed/10;
+    alarm[0] = room_speed/5;
 }
 
 if (obj_input.attack_key) {

@@ -32,7 +32,7 @@ if (instance_number(obj_player) &gt; 1) {
 event_inherited();
 made_random_room = false;
 hp = 20;
-player_speed = 4;
+player_speed = 2;
 player_h_speed = 0;
 player_v_speed = 0;
 len = 0;

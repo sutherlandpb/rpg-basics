@@ -30,7 +30,7 @@ event_inherited();
 
 //stats for this enemy
 image_speed = .1;
-move_speed = .5;
+move_speed = .25;
 
 attack = 1;
 hp = 3;

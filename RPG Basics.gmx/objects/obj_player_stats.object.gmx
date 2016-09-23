@@ -134,13 +134,13 @@ if (hp &lt; 0) {
 //stamina
 if (room != rm_pause &amp;&amp; stamina &lt; maxstamina &amp;&amp; alarm[0] == -1) {
     stamina++;
-    alarm[0] = room_speed;
+    alarm[0] = room_speed * 2;
 }
 
 //mana
 if (room != rm_pause &amp;&amp; mana &lt; maxmana &amp;&amp; alarm[1] == -1) {
     mana++;
-    alarm[1] = room_speed * 4;
+    alarm[1] = room_speed * 2;
 }
 
 

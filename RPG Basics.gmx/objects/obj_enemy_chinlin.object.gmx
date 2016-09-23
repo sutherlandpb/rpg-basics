@@ -30,7 +30,7 @@ event_inherited();
 
 //stats for this enemy
 image_speed = .2;
-move_speed = 1.5;
+move_speed = .75;
 
 attack = 2;
 hp = 5;
@@ -47,7 +47,7 @@ health_chance = .20;
 
 
 state = scr_enemy_idle_state;
-alarm[0] = room_speed * irandom_range(2, 5);
+alarm[0] = (room_speed * 2) * irandom_range(2, 5);
 sight = 128;
 xaxis = 0;
 yaxis = 0;
