@@ -29,7 +29,7 @@
 creator = noone;
 knockback = 10;
 phy_bullet = true;
-phy_fixed_rotation = true;
+
 </string>
           </argument>
         </arguments>

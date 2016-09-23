@@ -5,7 +5,7 @@ if (len == 0) {
     dir = face * 90;
 }
 
-len = player_speed * 4;
+len = player_speed * 3;
 
 player_horizontal_speed = lengthdir_x(len, dir);
 player_vertical_speed = lengthdir_y(len, dir);

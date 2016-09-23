@@ -24,14 +24,18 @@ if (obj_input.swap_key && obj_player_stats.level >= 5) {
 
 if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
     obj_player_stats.mana -= SPELL_COST;
-    var p = instance_create(x, y, obj_projectile);
+    var p = instance_create(x, y, obj_projectile);    
     var xforce = lengthdir_x(15, face * 90);
     var yforce = lengthdir_y(15, face * 90);
     p.creator = id;
     with(p) {
+        
         //yeah my sprite faces left, it should face right
         if (xforce != 0) {
-            image_xscale = -1 * sign(xforce);
+            image_xscale = sign(xforce);
+        } else if (yforce != 0) {
+            image_angle = 90;
+            image_yscale = sign(yforce);       
         }
         physics_apply_impulse(x, y, xforce, yforce);
     }    
