@@ -258,7 +258,9 @@ if (maxmana &gt;= SPELL_COST) {
     draw_healthbar(barx, bary, barx + barlength, bary + offset, manapercent, c_ltgray, c_gray, c_blue, 0, true, true);
 }
 
-scr_draw_with_shadow(xx, yy * ++listnum, "RANDOM COUNT: " + string(random_count));
+//Draw weapon HUD
+//draw_sprite(spr_weapon_box, -1, 
+//weapon_sprite
 </string>
           </argument>
         </arguments>
