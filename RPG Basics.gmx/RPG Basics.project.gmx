@@ -53,6 +53,7 @@
     <sprite>sprites\spr_weapon_box</sprite>
     <sprite>sprites\spr_fly</sprite>
     <sprite>sprites\spr_cookie</sprite>
+    <sprite>sprites\spr_crow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -107,6 +108,7 @@
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_parent</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_enemy_crow</object>
     <object>objects\obj_enemy_fly</object>
     <object>objects\obj_big_skeleton</object>
     <object>objects\obj_enemy_bat</object>

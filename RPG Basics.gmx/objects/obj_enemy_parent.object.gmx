@@ -170,8 +170,9 @@ if (last_enemy) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///step
+            <string>/// exec current state
 event_inherited();
+script_execute(state);
 </string>
           </argument>
         </arguments>
