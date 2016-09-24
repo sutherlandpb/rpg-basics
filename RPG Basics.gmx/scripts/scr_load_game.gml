@@ -32,6 +32,16 @@ with (obj_player_stats) {
     attack = save_data[? "attack"];
     mana = save_data[? "mana"];
     maxmana = save_data[? "maxmana"];
+    if (save_data[? "hasweaponzero"] == 1) {
+        has_weapon[WEAPON_SWORD] = true;
+    }
+    if (save_data[? "hasweaponone"] == 1) {
+        has_weapon[WEAPON_AXE] = true;    
+    }
+    if (save_data[? "hasweapontwo"] == 1) {
+        has_weapon[WEAPON_BONE] = true;    
+    }
+
         
 }
 ds_map_destroy(save_data);

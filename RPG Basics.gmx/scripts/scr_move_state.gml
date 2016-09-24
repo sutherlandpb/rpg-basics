@@ -18,6 +18,18 @@ if (obj_input.swap_key && obj_player_stats.level >= 5) {
     var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
     if (place_meeting(x, y + 4, nearest_weapon)) {
         scr_swap_weapons(nearest_weapon);           
+    } else {
+        //cycle through the weapons we have
+        var curr_weapon = obj_player_stats.current_weapon
+        do {
+            if (curr_weapon >= 2) {
+                curr_weapon = 0;
+            } else {
+                curr_weapon++;
+            }
+        } until (obj_player_stats.has_weapon[curr_weapon]);
+        scr_select_weapon(curr_weapon);        
+        
     }
     
 }

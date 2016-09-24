@@ -39,6 +39,12 @@ maxexpr = 3;
 level = 1;
 weapon_sprite = spr_sword;
 
+//Weapon switches
+has_weapon[WEAPON_SWORD] = true;
+has_weapon[WEAPON_AXE] = false;
+has_weapon[WEAPON_BONE] = false;
+
+current_weapon = WEAPON_SWORD;
 
 draw_set_color(c_white);
 

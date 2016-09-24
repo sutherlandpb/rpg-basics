@@ -20,6 +20,24 @@ with (obj_player_stats) {
     save_data[? "maxexpr"] = maxexpr;
     save_data[? "level"] = level;
     save_data[? "attack"] = attack;
+    save_data[? "hasweapon"] = has_weapon;  
+
+    var hasweaponzero = 0;
+    var hasweaponone = 0;
+    var hasweapontwo = 0;
+    if (has_weapon[WEAPON_SWORD]) {
+        hasweaponzero = 1;
+    }    
+    if (has_weapon[WEAPON_AXE]) {
+        hasweaponone = 1;
+    }    
+    if (has_weapon[WEAPON_BONE]) {
+        hasweapontwo = 1;
+    }        
+    save_data[? "hasweaponzero"] = hasweaponzero;
+    save_data[? "hasweaponone"] = hasweaponone;
+    save_data[? "hasweapontwo"] = hasweapontwo;
+
 }
 
 var save_string = json_encode(save_data);

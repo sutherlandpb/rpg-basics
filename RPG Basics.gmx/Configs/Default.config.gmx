@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="19">
+    <constants number="22">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
@@ -654,6 +654,9 @@
       <constant name="VOID">-7</constant>
       <constant name="ENEMY_HAS_NO_IDLE">0</constant>
       <constant name="ENEMY_HAS_IDLE">1</constant>
+      <constant name="WEAPON_SWORD">0</constant>
+      <constant name="WEAPON_AXE">1</constant>
+      <constant name="WEAPON_BONE">2</constant>
     </constants>
   </ConfigConstants>
 </Config>
