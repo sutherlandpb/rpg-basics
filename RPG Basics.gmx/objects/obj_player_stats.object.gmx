@@ -259,8 +259,14 @@ if (maxmana &gt;= SPELL_COST) {
 }
 
 //Draw weapon HUD
-//draw_sprite(spr_weapon_box, -1, 
+var weaponx = 850;
+var weapony = 40;
+
+draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, 4, 4, 90, c_white, .5);
+draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + 50, 4, 4, 90, c_white, 1);
+
 //weapon_sprite
+
 </string>
           </argument>
         </arguments>

@@ -52,6 +52,7 @@
     <sprite>sprites\spr_bone_sword</sprite>
     <sprite>sprites\spr_weapon_box</sprite>
     <sprite>sprites\spr_fly</sprite>
+    <sprite>sprites\spr_cookie</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -112,6 +113,7 @@
     <object>objects\obj_exp</object>
     <object>objects\obj_50_xp</object>
     <object>objects\obj_health</object>
+    <object>objects\obj_health2</object>
     <object>objects\obj_input</object>
     <object>objects\obj_level</object>
     <object>objects\obj_mana</object>

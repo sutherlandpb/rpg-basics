@@ -93,7 +93,11 @@ if (last_enemy) {
     instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_mana);
 } else if (scr_chance(health_chance)) {
     // drop a health pot
-    instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);
+    if (scr_chance(.5)) { 
+        instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health);    
+    } else {
+        instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health2);    
+    }
 }
 
 
