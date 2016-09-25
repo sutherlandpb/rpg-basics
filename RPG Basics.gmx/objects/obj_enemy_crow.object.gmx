@@ -51,8 +51,8 @@ health_chance = .20;
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.100000001490116</PhysicsObjectDensity>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.300000011920929</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
@@ -61,7 +61,9 @@ health_chance = .20;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>14,16</point>
-    <point>2,16</point>
+    <point>12,16</point>
+    <point>20,16</point>
+    <point>20,20</point>
+    <point>12,20</point>
   </PhysicsShapePoints>
 </object>

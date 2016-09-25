@@ -76,8 +76,6 @@
     <instance objName="obj_wide_wall" x="480" y="352" name="inst_896B8CEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="512" y="352" name="inst_2B73B49D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="544" y="352" name="inst_2EA5E902" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wide_wall" x="576" y="352" name="inst_734FAF61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wide_wall" x="608" y="352" name="inst_ACA531AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="0" y="0" name="inst_192461BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="128" y="0" name="inst_8F82B74B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="160" y="0" name="inst_86217973" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -125,6 +123,8 @@
     <instance objName="obj_weapon_item" x="384" y="256" name="inst_9914EF75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_axe_sign" x="384" y="256" name="inst_0A9FC1A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_big_skeleton" x="416" y="128" name="inst_0B0A0A91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="576" y="352" name="inst_CB74C93E" locked="0" code="new_room = rm_three;&#xA;new_x = 45;&#xA;new_y = 32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wide_wall" x="640" y="352" name="inst_B3863517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
