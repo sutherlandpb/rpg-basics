@@ -110,7 +110,10 @@ script_execute(state);
 sprite_index = sprite[face, movement];
 
 if (obj_player_stats.hp &lt;= 0) {
-    instance_destroy();
+    if (instance_exists(obj_player)) {
+        obj_player.persistent = false;
+    }
+    room_goto(rm_dead);
 }
 
 </string>

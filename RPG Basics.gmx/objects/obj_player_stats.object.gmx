@@ -144,7 +144,7 @@ switch (os_type) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//control the stats
+            <string> //control the stats
 
 //hp
 if (hp &lt; 0) {
@@ -201,7 +201,7 @@ if (obj_input.pause_key) {
           <argument>
             <kind>1</kind>
             <string>/// remember player's start position
-if (room == rm_pause) {
+if (room == rm_pause|| room == rm_dead) {
     exit;
 }
 switch (room_start_action) {
