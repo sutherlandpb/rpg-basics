@@ -51,8 +51,8 @@
     <option_android_mopub_ads>0</option_android_mopub_ads>
     <option_android_orient_landscape>True</option_android_orient_landscape>
     <option_android_orient_landscape_flipped>True</option_android_orient_landscape_flipped>
-    <option_android_orient_portrait>True</option_android_orient_portrait>
-    <option_android_orient_portrait_flipped>True</option_android_orient_portrait_flipped>
+    <option_android_orient_portrait>False</option_android_orient_portrait>
+    <option_android_orient_portrait_flipped>False</option_android_orient_portrait_flipped>
     <option_android_orientation>2</option_android_orientation>
     <option_android_ouya_icon>Configs\Default\android\icons\ouyaIcon.png</option_android_ouya_icon>
     <option_android_package_company>companyname</option_android_package_company>

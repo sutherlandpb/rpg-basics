@@ -64,6 +64,17 @@ random_count = 0;
 
 //onscreen controls
 onscreen_controls = true;
+
+switch (os_type) {
+    case os_windows: 
+        onscreen_controls = false;        
+        break;
+    case os_android: 
+    case os_ios: 
+    case os_winphone: 
+        onscreen_controls = true;
+        break;
+}
 </string>
           </argument>
         </arguments>

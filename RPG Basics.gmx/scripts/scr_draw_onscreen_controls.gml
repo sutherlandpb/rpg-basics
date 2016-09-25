@@ -40,7 +40,7 @@ virtual_key_add(button_x[5], button_y[5], button_width, button_height, vk_space)
 virtual_key_add(button_x[6], button_y[6], button_width, button_height, vk_lalt);
 virtual_key_add(button_x[7], button_y[7], button_width, button_height, vk_lshift);
 
-virtual_key_add(button_x[8], button_y[8], button_width, button_height, vk_tab);
+//virtual_key_add(button_x[8], button_y[8], button_width, button_height, vk_tab);
 virtual_key_add(button_x[9], button_y[9], button_width, button_height, vk_escape);
 
 
@@ -56,7 +56,7 @@ draw_rectangle(button_x[5], button_y[5], button_x[5] + button_width,button_y[5] 
 draw_rectangle(button_x[6], button_y[6], button_x[6] + button_width,button_y[6] + button_height,false); //Draw our button
 draw_rectangle(button_x[7], button_y[7], button_x[7] + button_width,button_y[7] + button_height,false); //Draw our button
 
-draw_rectangle(button_x[8], button_y[8], button_x[8] + button_width,button_y[8] + button_height,false); //Draw our button
+//draw_rectangle(button_x[8], button_y[8], button_x[8] + button_width,button_y[8] + button_height,false); //Draw our button
 draw_rectangle(button_x[9], button_y[9], button_x[9] + button_width,button_y[9] + button_height,false); //Draw our button
 
 
