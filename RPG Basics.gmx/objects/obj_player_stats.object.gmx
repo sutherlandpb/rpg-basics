@@ -248,12 +248,12 @@ var listnum = 1;
 var hppercent = hp / maxhp * 100.0;
 var manapercent = mana / maxmana * 100;
 var staminapercent = stamina / maxstamina * 100;
-var offset = 6;
-var barx = 5;
+var offset = display_get_gui_height() div 90;
+var barx = display_get_gui_width() div 192;
 var bary = 0;
-var barlength = 100;
+var barlength = display_get_gui_width() div 9.6;
 var xx = barx + offset + barlength;
-var yy = 16;
+var yy = display_get_gui_height() div 33.75;
 
 
 scr_draw_with_shadow(xx, yy * listnum, "HP: " + string(hp) + "/" + string(maxhp));
@@ -272,12 +272,13 @@ if (maxmana &gt;= SPELL_COST) {
 }
 
 //Draw weapon HUD
-var weaponx = 850;
-var weapony = 40;
-
-draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, 4, 4, 90, c_white, .5);
+var weaponx = display_get_gui_width() * .9;
+var weapony = display_get_gui_height() div 13.5;
+var scale = display_get_gui_width() * .004;
+var weapon_offset = scale * .0768;
+draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, scale, scale, 90, c_white, .5);
 //weapon_sprite
-draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + 50, 4, 4, 90, c_white, 1);
+draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + 50, scale, scale, 90, c_white, 1);
 
 // draw on-screen controls if needed
 if (onscreen_controls) {

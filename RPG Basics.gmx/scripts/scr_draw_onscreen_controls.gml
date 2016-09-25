@@ -1,6 +1,6 @@
 ///scr_draw_onscreen_controls
-//show_message(string(display_get_gui_width())); //960
-//show_message(string(display_get_gui_height()));//540
+//960 - default window width
+//540 - default window height
 var button_width = display_get_gui_width() div 18;
 var button_height = button_width;
 var button_x;
