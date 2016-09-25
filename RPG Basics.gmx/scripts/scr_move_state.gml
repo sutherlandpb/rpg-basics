@@ -14,6 +14,12 @@ if (obj_input.attack_key) {
     image_index = 0;
     state = scr_attack_state;
 }
+
+if (obj_input.show_controls_key) {
+    obj_input.show_controls_key = 0;
+    obj_player_stats.onscreen_controls = !obj_player_stats.onscreen_controls;
+}
+
 if (obj_input.swap_key && obj_player_stats.level >= 5) {
     var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
     if (place_meeting(x, y + 4, nearest_weapon)) {

@@ -61,6 +61,9 @@ previous_room = room;
 
 room_start_action = NEW_ROOM;
 random_count = 0;
+
+//onscreen controls
+onscreen_controls = true;
 </string>
           </argument>
         </arguments>
@@ -158,13 +161,6 @@ if (obj_input.pause_key) {
             obj_player.persistent = false;
         }
         previous_room = room;
-        /*
-        if (room != rm_random) {
-            previous_room = room;
-        } else {
-            previous_room = rm_one;
-        }
-        */
         room_persistent = true;
         room_goto(rm_pause);    
     } else {    
@@ -272,7 +268,10 @@ draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, 4, 4, 90, c_white, .5);
 //weapon_sprite
 draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + 50, 4, 4, 90, c_white, 1);
 
-
+// draw on-screen controls if needed
+if (onscreen_controls) {
+    scr_draw_onscreen_controls();
+}
 
 </string>
           </argument>

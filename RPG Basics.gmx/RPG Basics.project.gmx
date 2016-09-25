@@ -95,6 +95,7 @@
       <script>scripts\scr_move_if_possible.gml</script>
       <script>scripts\scr_knockback_if_possible.gml</script>
       <script>scripts\scr_select_weapon.gml</script>
+      <script>scripts\scr_draw_onscreen_controls.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
