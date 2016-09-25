@@ -275,10 +275,10 @@ if (maxmana &gt;= SPELL_COST) {
 var weaponx = display_get_gui_width() * .9;
 var weapony = display_get_gui_height() div 13.5;
 var scale = display_get_gui_width() * .004;
-var weapon_offset = scale * .0768;
+var weapon_offset = scale * 14;
 draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, scale, scale, 90, c_white, .5);
 //weapon_sprite
-draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + 50, scale, scale, 90, c_white, 1);
+draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + weapon_offset, scale, scale, 90, c_white, 1);
 
 // draw on-screen controls if needed
 if (onscreen_controls) {
