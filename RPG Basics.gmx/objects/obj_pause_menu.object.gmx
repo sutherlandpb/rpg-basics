@@ -135,9 +135,9 @@ if (alarm[0] &lt;= 0) {
                 game_end();
                 break;
             default: 
-                break;
-         
+                break;   
         }
+        alarm[0] = room_speed / 3;
     }
 }
 </string>

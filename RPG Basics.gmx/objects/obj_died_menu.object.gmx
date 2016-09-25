@@ -118,8 +118,8 @@ if (alarm[0] &lt;= 0) {
                 break;
             default: 
                 break;
-         
         }
+        alarm[0] = room_speed / 3;
     }
 }
 </string>
