@@ -48,7 +48,6 @@ if (obj_input.spell_key && obj_player_stats.mana >= SPELL_COST) {
     p.creator = id;
     with(p) {
         
-        //yeah my sprite faces left, it should face right
         if (xforce != 0) {
             image_xscale = sign(xforce);
         } else if (yforce != 0) {

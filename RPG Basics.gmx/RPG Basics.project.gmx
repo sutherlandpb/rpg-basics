@@ -55,6 +55,7 @@
     <sprite>sprites\spr_cookie</sprite>
     <sprite>sprites\spr_crow</sprite>
     <sprite>sprites\spr_kitty_no</sprite>
+    <sprite>sprites\spr_arrow_right</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -100,31 +101,33 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_50_xp</object>
     <object>objects\obj_actor_parent</object>
     <object>objects\obj_axe_sign</object>
+    <object>objects\obj_big_skeleton</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_damage_number</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_dialog</object>
+    <object>objects\obj_died_menu</object>
     <object>objects\obj_door</object>
-    <object>objects\obj_exit_door</object>
+    <object>objects\obj_enemy_bat</object>
     <object>objects\obj_enemy_chinlin</object>
-    <object>objects\obj_enemy_parent</object>
-    <object>objects\obj_enemy_slime</object>
-    <object>objects\obj_enemy_kitty_no</object>
     <object>objects\obj_enemy_crow</object>
     <object>objects\obj_enemy_fly</object>
-    <object>objects\obj_big_skeleton</object>
-    <object>objects\obj_enemy_bat</object>
+    <object>objects\obj_enemy_kitty_no</object>
+    <object>objects\obj_enemy_parent</object>
+    <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_exit_door</object>
     <object>objects\obj_exp</object>
-    <object>objects\obj_50_xp</object>
     <object>objects\obj_health</object>
     <object>objects\obj_health2</object>
     <object>objects\obj_input</object>
+    <object>objects\obj_item</object>
+    <object>objects\obj_joystick</object>
     <object>objects\obj_level</object>
     <object>objects\obj_mana</object>
     <object>objects\obj_pause_menu</object>
-    <object>objects\obj_died_menu</object>
     <object>objects\obj_player</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_projectile</object>
@@ -135,11 +138,9 @@
     <object>objects\obj_view</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_weapon_animation</object>
-    <object>objects\obj_weapon_item</object>
     <object>objects\obj_weapon_bone_sword_item</object>
+    <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
-    <object>objects\obj_item</object>
-    <object>objects\obj_joystick</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
