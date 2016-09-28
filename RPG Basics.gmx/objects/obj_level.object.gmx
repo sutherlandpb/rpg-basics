@@ -30,7 +30,7 @@
 //tileset
 var wall_tileset = bg_wall_tiles;
 var floor_tile = bg_tile;
-var tileset_max = 1;
+var tileset_max = 2;
 switch(irandom(tileset_max)) {
     case 0 :
         wall_tileset = bg_wall_tiles;
@@ -40,6 +40,11 @@ switch(irandom(tileset_max)) {
         wall_tileset = bg_wall_red;
         floor_tile = bg_tile_red;
         break;
+    case 2 : 
+        wall_tileset = bg_wall_gray;
+        floor_tile = bg_tile_grass;
+        break;
+    
 }
 
 
