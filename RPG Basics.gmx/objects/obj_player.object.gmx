@@ -227,12 +227,15 @@ with (obj_player_stats) {
           <argument>
             <kind>1</kind>
             <string>///collect health
-with(other) {
+var add_stamina = other.add_stamina;
+
+with(other) {    
     instance_destroy();
 }
 audio_play_sound(snd_expr, 6, false);
 with (obj_player_stats) {
     hp = min(hp + 5, maxhp);
+    stamina = min(stamina + add_stamina, maxstamina);
 }
 </string>
           </argument>

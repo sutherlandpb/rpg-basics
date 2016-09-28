@@ -32,5 +32,8 @@ if (scr_animation_hit_frame(3)) {
     var damage = instance_create(xx, yy, obj_damage);    
     damage.creator = id;
     damage.damage = obj_player_stats.attack;
+    if (obj_player_stats.current_weapon == WEAPON_BONE) {
+        damage.knockback *= 2;
+    }
 }
 
