@@ -26,6 +26,24 @@
           <argument>
             <kind>1</kind>
             <string>///create level
+
+//tileset
+var wall_tileset = bg_wall_tiles;
+var floor_tile = bg_tile;
+var tileset_max = 1;
+switch(irandom(tileset_max)) {
+    case 0 :
+        wall_tileset = bg_wall_tiles;
+        floor_tile = bg_tile;
+        break;
+    case 1 : 
+        wall_tileset = bg_wall_red;
+        floor_tile = bg_tile_red;
+        break;
+}
+
+
+//enemies
 max_enemy_count = 0;
 enemy_count = 0;
 //resize
@@ -108,7 +126,7 @@ var have_placed_door = false;
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++) {
         if (grid[# xx, yy] == FLOOR) {
-            tile_add(bg_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 99999);             
+            tile_add(floor_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 99999);             
             var odds = 20;   
             var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
             var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
@@ -161,52 +179,52 @@ for (var yy = 0; yy &lt; height * 2; yy++){
             
             if (right) {
                 if (bottom) { 
-                    tile_add(bg_wall_tiles, tw * 4, th * 1, tw, th, tx+tw, ty, -ty);
+                    tile_add(wall_tileset, tw * 4, th * 1, tw, th, tx+tw, ty, -ty);
                 } else if (top) {
                     if (top_right) {
-                        tile_add(bg_wall_tiles, tw * 4, th * 0, tw, th, tx+tw, ty-th, -ty);                    
+                        tile_add(wall_tileset, tw * 4, th * 0, tw, th, tx+tw, ty-th, -ty);                    
                     } else {
-                        tile_add(bg_wall_tiles, tw * 3, th * 0, tw, th, tx, ty-th, -ty);
+                        tile_add(wall_tileset, tw * 3, th * 0, tw, th, tx, ty-th, -ty);
                     }
-                    tile_add(bg_wall_tiles, tw*0, th*1, tw, th, tx+tw, ty, -ty);    
+                    tile_add(wall_tileset, tw*0, th*1, tw, th, tx+tw, ty, -ty);    
                 } else {
-                    tile_add(bg_wall_tiles, tw * 0, th * 1, tw, th, tx+tw, ty, -ty);
+                    tile_add(wall_tileset, tw * 0, th * 1, tw, th, tx+tw, ty, -ty);
                 }
             }
             
             if (left) {
                 if (bottom) {
-                    tile_add(bg_wall_tiles, tw * 3, th * 1, tw, th, tx-tw, ty, -ty);
+                    tile_add(wall_tileset, tw * 3, th * 1, tw, th, tx-tw, ty, -ty);
                 } else if (top) {
                     if (top_left) {
-                        tile_add(bg_wall_tiles, tw * 3, th * 0, tw, th, tx-tw, ty-th, -ty);
+                        tile_add(wall_tileset, tw * 3, th * 0, tw, th, tx-tw, ty-th, -ty);
                     } else {
-                        tile_add(bg_wall_tiles, tw * 4, th * 0, tw, th, tx, ty-th, -ty);
+                        tile_add(wall_tileset, tw * 4, th * 0, tw, th, tx, ty-th, -ty);
                     }          
-                    tile_add(bg_wall_tiles, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);      
+                    tile_add(wall_tileset, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);      
                 } else {                
-                    tile_add(bg_wall_tiles, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);
+                    tile_add(wall_tileset, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);
                 }
             }
             
             if (top) {
                 if (!top_right) {
-                    tile_add(bg_wall_tiles, tw * 2, th * 2, tw, th, tx, ty-th, -ty+tw);
+                    tile_add(wall_tileset, tw * 2, th * 2, tw, th, tx, ty-th, -ty+tw);
                 } else if (!top_left) {
-                    tile_add(bg_wall_tiles, tw * 0, th * 2, tw, th, tx, ty-th, -ty+tw);
+                    tile_add(wall_tileset, tw * 0, th * 2, tw, th, tx, ty-th, -ty+tw);
                  } else {
-                    tile_add(bg_wall_tiles, tw * 1, th * 2, tw, th, tx, ty-th, -ty+tw);
+                    tile_add(wall_tileset, tw * 1, th * 2, tw, th, tx, ty-th, -ty+tw);
                 }
                                 
             }
             
             if (bottom) {
                 if (!bottom_right) {
-                    tile_add(bg_wall_tiles, tw * 2, th * 0, tw, th, tx, ty, -ty-tw);
+                    tile_add(wall_tileset, tw * 2, th * 0, tw, th, tx, ty, -ty-tw);
                 } else if (!bottom_left) {
-                    tile_add(bg_wall_tiles, tw * 0, th * 0, tw, th, tx, ty, -ty-tw);
+                    tile_add(wall_tileset, tw * 0, th * 0, tw, th, tx, ty, -ty-tw);
                  } else {
-                    tile_add(bg_wall_tiles, tw * 1, th * 0, tw, th, tx, ty, -ty-tw);
+                    tile_add(wall_tileset, tw * 1, th * 0, tw, th, tx, ty, -ty-tw);
                 }
             
             }

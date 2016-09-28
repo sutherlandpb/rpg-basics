@@ -65,6 +65,8 @@
     <background>background\bg_tile</background>
     <background>background\bg_wall</background>
     <background>background\bg_wall_tiles</background>
+    <background>background\bg_wall_red</background>
+    <background>background\bg_tile_red</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

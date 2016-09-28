@@ -67,6 +67,7 @@ end_color = 0;
 end_color_display = c_white;
 color_fade_speed = 0;
 implode = -1;
+always_explode = false;
 </string>
           </argument>
         </arguments>
@@ -117,7 +118,7 @@ if (last_enemy) {
     }
 }
 
-if (obj_player_stats.current_weapon == WEAPON_AXE) {
+if (obj_player_stats.current_weapon == WEAPON_AXE || always_explode) {
     scr_sprite_explode(max_life, min_life, max_speed, min_speed, max_peice_size, min_peice_size, spin, fade, fade_amt, fade_to_color, end_color_display, color_fade_speed, implode);
 }
 
