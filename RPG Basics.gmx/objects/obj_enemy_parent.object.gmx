@@ -50,6 +50,23 @@ alarm[0] = (room_speed * 2) * irandom_range(2, 5);
 
 xaxis = 0;
 yaxis = 0;
+
+//Explode variables
+// Changeable Variables
+max_life = 30;
+min_life = 10;
+max_speed = 10;
+min_speed = 5;
+max_peice_size = 8;
+min_peice_size = 8;
+spin = 5;
+fade = 0;
+fade_amt = 0;
+fade_to_color = 1;
+end_color = 0;
+end_color_display = c_white;
+color_fade_speed = 0;
+implode = -1;
 </string>
           </argument>
         </arguments>
@@ -98,6 +115,10 @@ if (last_enemy) {
     } else {
         instance_create(x + random_range(-4,4), y + random_range(-4, 4), obj_health2);    
     }
+}
+
+if (obj_player_stats.current_weapon == WEAPON_AXE) {
+    scr_sprite_explode(max_life, min_life, max_speed, min_speed, max_peice_size, min_peice_size, spin, fade, fade_amt, fade_to_color, end_color_display, color_fade_speed, implode);
 }
 
 

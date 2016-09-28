@@ -3,7 +3,9 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Sprite Exploder</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_enemy_die</sound>
     <sound>sound\snd_expr</sound>
@@ -56,6 +58,8 @@
     <sprite>sprites\spr_crow</sprite>
     <sprite>sprites\spr_kitty_no</sprite>
     <sprite>sprites\spr_arrow_right</sprite>
+    <sprite>sprites\spr_demo_player</sprite>
+    <sprite>sprites\spr_rectangle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile</background>
@@ -99,6 +103,10 @@
       <script>scripts\scr_select_weapon.gml</script>
       <script>scripts\scr_draw_onscreen_controls.gml</script>
     </scripts>
+    <script>scripts\scr_sprite_explode.gml</script>
+    <script>scripts\scr_sprite_dissolve.gml</script>
+    <script>scripts\scr_sprite_radial.gml</script>
+    <script>scripts\scr_sprite_asymble.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_50_xp</object>
@@ -141,6 +149,18 @@
     <object>objects\obj_weapon_bone_sword_item</object>
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
+    <objects name="rm_explosion">
+      <object>objects\obj_demo_particle</object>
+    </objects>
+    <objects name="rm_dissolve">
+      <object>objects\obj_dissolve_particle</object>
+    </objects>
+    <objects name="rm_radial">
+      <object>objects\obj_radial_particle</object>
+    </objects>
+    <objects name="rm_asymble">
+      <object>objects\obj_asymble_particle</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
