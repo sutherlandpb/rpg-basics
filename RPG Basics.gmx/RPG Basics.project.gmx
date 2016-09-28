@@ -67,6 +67,7 @@
     <background>background\bg_wall_tiles</background>
     <background>background\bg_wall_red</background>
     <background>background\bg_wall_gray</background>
+    <background>background\bg_wall_wood</background>
     <background>background\bg_tile_red</background>
     <background>background\bg_tile_grass</background>
   </backgrounds>
