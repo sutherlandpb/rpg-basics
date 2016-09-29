@@ -14,6 +14,10 @@ switch (weapon) {
         obj_player_stats.weapon_sprite = spr_bone_sword;    
         obj_player_stats.current_weapon = weapon;        
         break;    
+    case WEAPON_RAINBOW :
+        obj_player_stats.weapon_sprite = spr_rainbow_sword;    
+        obj_player_stats.current_weapon = weapon;        
+        break;    
     default : 
        break;    
 }

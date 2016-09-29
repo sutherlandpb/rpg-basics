@@ -25,6 +25,7 @@ with (obj_player_stats) {
     var hasweaponzero = 0;
     var hasweaponone = 0;
     var hasweapontwo = 0;
+    var hasweaponthree = 0;
     if (has_weapon[WEAPON_SWORD]) {
         hasweaponzero = 1;
     }    
@@ -34,9 +35,13 @@ with (obj_player_stats) {
     if (has_weapon[WEAPON_BONE]) {
         hasweapontwo = 1;
     }        
+    if (has_weapon[WEAPON_RAINBOW]) {
+        hasweaponthree = 1;
+    }
     save_data[? "hasweaponzero"] = hasweaponzero;
     save_data[? "hasweaponone"] = hasweaponone;
     save_data[? "hasweapontwo"] = hasweapontwo;
+    save_data[? "hasweaponthree"] = hasweaponthree;
 
 }
 

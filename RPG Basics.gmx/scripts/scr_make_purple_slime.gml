@@ -12,4 +12,5 @@ with(slime) {
     mana_chance = .10;
     health_chance = .20;
     image_blend = c_purple;
+    end_color_display = c_purple;
 }

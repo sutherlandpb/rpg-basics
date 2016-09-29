@@ -43,6 +43,7 @@ weapon_sprite = spr_sword;
 has_weapon[WEAPON_SWORD] = true;
 has_weapon[WEAPON_AXE] = false;
 has_weapon[WEAPON_BONE] = false;
+has_weapon[WEAPON_RAINBOW] = false;
 
 current_weapon = WEAPON_SWORD;
 
@@ -75,6 +76,9 @@ switch (os_type) {
         onscreen_controls = true;
         break;
 }
+
+weapon_frame = 0;
+
 </string>
           </argument>
         </arguments>
@@ -278,8 +282,11 @@ var scale = display_get_gui_width() * .004;
 var weapon_offset = scale * 14;
 draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, scale, scale, 90, c_white, .5);
 //weapon_sprite
-draw_sprite_ext(weapon_sprite, 0, weaponx, weapony + weapon_offset, scale, scale, 90, c_white, 1);
+draw_sprite_ext(weapon_sprite, weapon_frame++ div 10, weaponx, weapony + weapon_offset, scale, scale, 90, c_white, 1);
 
+if (weapon_frame &gt;= 60) {
+    weapon_frame = 0;
+}
 // draw on-screen controls if needed
 if (onscreen_controls) {
     scr_draw_onscreen_controls();

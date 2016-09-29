@@ -45,6 +45,7 @@
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_dialog_box</sprite>
     <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\spr_rainbow_sword</sprite>
     <sprite>sprites\spr_axe</sprite>
     <sprite>sprites\spr_bat</sprite>
     <sprite>sprites\spr_bat_rest</sprite>
@@ -127,6 +128,7 @@
     <object>objects\obj_enemy_bat</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_crow</object>
+    <object>objects\obj_pet_crow</object>
     <object>objects\obj_enemy_fly</object>
     <object>objects\obj_enemy_kitty_no</object>
     <object>objects\obj_enemy_parent</object>
@@ -152,6 +154,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_bone_sword_item</object>
+    <object>objects\obj_rainbow_sword</object>
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
     <objects name="rm_explosion">

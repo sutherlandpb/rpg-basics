@@ -28,7 +28,7 @@ if (obj_input.swap_key && obj_player_stats.level >= 5) {
         //cycle through the weapons we have
         var curr_weapon = obj_player_stats.current_weapon
         do {
-            if (curr_weapon >= 2) {
+            if (curr_weapon >= 3) {
                 curr_weapon = 0;
             } else {
                 curr_weapon++;

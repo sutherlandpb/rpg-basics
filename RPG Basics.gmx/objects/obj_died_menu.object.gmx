@@ -107,6 +107,7 @@ if (alarm[0] &lt;= 0) {
                 obj_player_stats.has_weapon[WEAPON_SWORD] = true;
                 obj_player_stats.has_weapon[WEAPON_AXE] = false;
                 obj_player_stats.has_weapon[WEAPON_BONE] = false;
+                obj_player_stats.has_weapon[WEAPON_RAINBOW] = false;
                 obj_player_stats.hp = obj_player_stats.maxhp div 2;
                 room_goto(rm_one);
                 break;
