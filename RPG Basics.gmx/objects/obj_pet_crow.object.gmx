@@ -30,11 +30,11 @@ event_inherited();
 
 //stats for this enemy
 image_speed = .25;
-move_speed = .25;
+move_speed = .35;
 
 attack = 1;
 hp = 3;
-sight = 128;
+sight = 200;
 knockback = 0;
 
 
@@ -64,12 +64,14 @@ knockback = 0;
 event_inherited();
 if (instance_exists(obj_player)) {
     var nearest_enemy = instance_nearest(x, y, obj_enemy_parent);
+    var can_see_enemy = false;
     if (nearest_enemy != noone) {
         var dir = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
         var hspd = lengthdir_x(move_speed, dir);
         var vspd = lengthdir_y(move_speed, dir);
-        
-    } else {
+        can_see_enemy = distance_to_point(nearest_enemy.x, nearest_enemy.y) &lt;= sight;        
+    } 
+    if (nearest_enemy == noone || !can_see_enemy){
         var dir = point_direction(x, y, obj_player.x, obj_player.y);
         var hspd = lengthdir_x(move_speed, dir);
         var vspd = lengthdir_y(move_speed, dir);

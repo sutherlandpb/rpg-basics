@@ -36,6 +36,7 @@ if (scr_animation_hit_frame(3)) {
         damage.knockback *= 2;
     } else if (obj_player_stats.current_weapon == WEAPON_RAINBOW) {
         if (obj_player_stats.stamina >= CROW_COST) {
+            obj_player_stats.stamina -= CROW_COST;
             instance_create(x, y - 10, obj_pet_crow);
         }
     }
