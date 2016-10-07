@@ -270,12 +270,20 @@ var yy = 480
 
 scr_draw_with_shadow(xx, yy, "ENEMIES LEFT: " + string(enemy_count) + "/" + string(max_enemy_count));
 
-if (instance_exists(obj_player) &amp;&amp; enemy_count &lt; 5 &amp;&amp; enemy_count &gt; 0) {
-    var nearest_enemy = instance_nearest(obj_player.x, obj_player.y, obj_enemy_parent);
-    if (nearest_enemy != noone) {
-        var dir = point_direction(obj_player.x, obj_player.y, nearest_enemy.x, nearest_enemy.y);
-        draw_sprite_ext(spr_arrow_right, image_index, display_get_gui_width() div 2, display_get_gui_height() div 2, 1, 1, dir, c_white, 1);
-    }
+if (instance_exists(obj_player)) {
+    if (enemy_count &lt; 5 &amp;&amp; enemy_count &gt; 0) {
+        var nearest_enemy = instance_nearest(obj_player.x, obj_player.y, obj_enemy_parent);
+        if (nearest_enemy != noone) {
+            var dir = point_direction(obj_player.x, obj_player.y, nearest_enemy.x, nearest_enemy.y);
+            draw_sprite_ext(spr_arrow_right, image_index, display_get_gui_width() div 2, display_get_gui_height() div 2, 1, 1, dir, c_red, 1);
+        }
+    } else if (enemy_count == 0) {
+        var nearest_exit = instance_nearest(obj_player.x, obj_player.y, obj_exit_door);
+        if (nearest_exit != noone) {
+            var dir = point_direction(obj_player.x, obj_player.y, nearest_exit.x, nearest_exit.y);
+            draw_sprite_ext(spr_arrow_right, image_index, display_get_gui_width() div 2, display_get_gui_height() div 2, 1, 1, dir, c_green, 1);
+        }    
+    }        
 }
 
 
