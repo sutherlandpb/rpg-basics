@@ -1,7 +1,12 @@
 //scr_load_level(level_name)
 var filename = argument[0];
 
-var file = file_text_open_read(filename);
-var room_string = file_text_read_string(file);
-file_text_close(file);
-ds_grid_read(obj_level.grid, room_string);
+ini_open(filename);
+var room_string = ini_read_string("level", "grid", "");
+ini_close();
+if (instance_exists(obj_level_editor)) {
+    ds_grid_read(obj_level_editor.grid, room_string);
+} else if (instance_exists(obj_level)) {
+    ds_grid_read(obj_level.grid, room_string);
+}
+

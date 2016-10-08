@@ -2,6 +2,12 @@
 var height = argument[0];
 var width = argument[1];
 
+//delete so you can redraw
+tile_layer_delete(0);
+
+//set the tileset
+scr_select_tileset(current_tileset);
+
 // draw the floor
 for (var yy = 0; yy < height; yy++) {
     for (var xx = 0; xx < width; xx++) {

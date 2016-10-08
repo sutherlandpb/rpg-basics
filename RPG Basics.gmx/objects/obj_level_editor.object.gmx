@@ -31,7 +31,8 @@
 wall_tileset = bg_wall_tiles;
 floor_tile = bg_tile;
 tileset_max = 3;
-scr_select_tileset(tileset_max);
+current_tileset = 0;
+scr_select_tileset(current_tileset);
 //resize
 room_width = (CELL_WIDTH/16) * 720;
 room_height = (CELL_HEIGHT/16) * 720;
@@ -112,6 +113,15 @@ var amount = view_wview[view]/80;
 
 scr_get_input();
 
+if (spell_key) {
+    if (current_tileset == tileset_max) {
+        current_tileset = 0;
+    } else {
+        current_tileset++;     
+    }
+    scr_draw_level(height, width);
+}
+
 if (up_key) {
     view_yview[view] -= amount;
 }
@@ -138,7 +148,6 @@ if (mouse_check_button(mb_left)) {
     if (tile_type != FLOOR) {
         //set it to floor        
         obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = FLOOR;
-        tile_layer_delete(0);
         scr_draw_level(height, width);
     }
 }
@@ -166,9 +175,8 @@ if mouse_check_button(mb_right) {
         }
         if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] == WALL) {
             obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] = VOID;
-        }
+        }       
         
-        tile_layer_delete(0);
         scr_draw_level(height, width);
     }
 
@@ -201,7 +209,8 @@ if mouse_check_button(mb_right) {
             <string>/// draw UI
 
 var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
-scr_draw_with_shadow(32, 32, "Tile: " + string(tile_type));
+scr_draw_with_shadow(32, 32, "Tile: " + string(tile_type) + " Tileset: " + string(current_tileset));
+
 
 
 
