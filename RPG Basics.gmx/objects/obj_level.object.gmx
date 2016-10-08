@@ -103,12 +103,12 @@ repeat (1000) {
     
     //make sure we don't move outside the grid
     cx = clamp(cx, 1, width - 2);
-    cy = clamp(cy, 1, height -2);
+    cy = clamp(cy, 1, height - 2);
 }
 
 //add walls if needed
 for (var yy = 1; yy &lt; height - 1; yy++) {
-    for (var xx = 1; xx &lt; width - 1; xx++) {
+    for (var xx = 1; xx &lt; width - 1; xx++) {   
         if (grid[# xx, yy] == FLOOR) {
             if (grid[# xx + 1, yy] != FLOOR){
                 //right
@@ -130,6 +130,21 @@ for (var yy = 1; yy &lt; height - 1; yy++) {
         }
     }
 }
+// remove single walls
+for (var yy = 1; yy &lt; height - 1; yy++) {
+    for (var xx = 1; xx &lt; width - 1; xx++) {
+        if (grid[# xx, yy] == WALL 
+                &amp;&amp; grid[# xx + 1, yy] == FLOOR 
+                &amp;&amp; grid[# xx - 1, yy] == FLOOR             
+                &amp;&amp; grid[# xx, yy + 1] == FLOOR 
+                &amp;&amp; grid[# xx, yy - 1] == FLOOR) {
+            grid[# xx, yy] = FLOOR;         
+        }
+    }
+}
+
+
+
 var have_placed_door = false;
 // draw the floor
 for (var yy = 0; yy &lt; height; yy++) {

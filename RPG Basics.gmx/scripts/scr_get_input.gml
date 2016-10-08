@@ -9,6 +9,7 @@ swap_key = keyboard_check_pressed(vk_lshift);
 spell_key = keyboard_check_pressed(vk_lcontrol);
 pause_key = keyboard_check_pressed(vk_escape);
 show_controls_key = keyboard_check_pressed(vk_tab);
+edit_key = keyboard_check_pressed(vk_f1);
 //get the axis
 xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);

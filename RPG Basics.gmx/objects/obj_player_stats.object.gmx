@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialize the stats
+            <string>show_stats = true;
+/// initialize the stats
 hp = 5;
 maxhp = hp;
 stamina = 10;
@@ -182,6 +183,23 @@ if (obj_input.pause_key) {
         room_goto(previous_room);        
     }
 }
+
+// room editor
+if (obj_input.edit_key) {
+    obj_input.edit_key = false;
+    if (room != rm_pause &amp;&amp; room != rm_level_editor) {
+        obj_player_stats.show_stats = false;
+        if (instance_exists(obj_player)) {
+            obj_player.persistent = false;
+        }
+        previous_room = room;
+        room_persistent = true;
+        room_goto(rm_level_editor);    
+    } else {
+        obj_player_stats.show_stats = true;    
+        room_goto(previous_room);        
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -246,52 +264,54 @@ room_start_action = NEW_ROOM;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw stats
-var listnum = 1;
-
-var hppercent = hp / maxhp * 100.0;
-var manapercent = mana / maxmana * 100;
-var staminapercent = stamina / maxstamina * 100;
-var offset = display_get_gui_height() div 90;
-var barx = display_get_gui_width() div 192;
-var bary = 0;
-var barlength = display_get_gui_width() div 9.6;
-var xx = barx + offset + barlength;
-var yy = display_get_gui_height() div 33.75;
-
-
-scr_draw_with_shadow(xx, yy * listnum, "HP: " + string(hp) + "/" + string(maxhp));
-scr_draw_with_shadow(xx, yy * ++listnum, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
-if (maxmana &gt;= SPELL_COST) {
-    scr_draw_with_shadow(xx, yy * ++listnum, "MANA: " + string(mana) + "/" + string(maxmana));
-}
-scr_draw_with_shadow(xx, yy * ++listnum, "LEVEL: " + string(level));
-bary += offset * 3.5;
-draw_healthbar(barx, bary, barx + barlength, bary + offset, hppercent, c_ltgray, c_red, c_green, 0, true, true);
-bary += offset * 2.8;
-draw_healthbar(barx, bary, barx + barlength, bary + offset, staminapercent, c_ltgray, c_white, c_yellow, 0, true, true);
-if (maxmana &gt;= SPELL_COST) {
+            <string>if (show_stats) {
+    
+    ///draw stats
+    var listnum = 1;
+    
+    var hppercent = hp / maxhp * 100.0;
+    var manapercent = mana / maxmana * 100;
+    var staminapercent = stamina / maxstamina * 100;
+    var offset = display_get_gui_height() div 90;
+    var barx = display_get_gui_width() div 192;
+    var bary = 0;
+    var barlength = display_get_gui_width() div 9.6;
+    var xx = barx + offset + barlength;
+    var yy = display_get_gui_height() div 33.75;
+    
+    
+    scr_draw_with_shadow(xx, yy * listnum, "HP: " + string(hp) + "/" + string(maxhp));
+    scr_draw_with_shadow(xx, yy * ++listnum, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
+    if (maxmana &gt;= SPELL_COST) {
+        scr_draw_with_shadow(xx, yy * ++listnum, "MANA: " + string(mana) + "/" + string(maxmana));
+    }
+    scr_draw_with_shadow(xx, yy * ++listnum, "LEVEL: " + string(level));
+    bary += offset * 3.5;
+    draw_healthbar(barx, bary, barx + barlength, bary + offset, hppercent, c_ltgray, c_red, c_green, 0, true, true);
     bary += offset * 2.8;
-    draw_healthbar(barx, bary, barx + barlength, bary + offset, manapercent, c_ltgray, c_gray, c_blue, 0, true, true);
-}
-
-//Draw weapon HUD
-var weaponx = display_get_gui_width() * .9;
-var weapony = display_get_gui_height() div 13.5;
-var scale = display_get_gui_width() * .004;
-var weapon_offset = scale * 14;
-draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, scale, scale, 90, c_white, .5);
-//weapon_sprite
-draw_sprite_ext(weapon_sprite, weapon_frame++ div 10, weaponx, weapony + weapon_offset, scale, scale, 90, c_white, 1);
-
-if (weapon_frame &gt;= 60) {
-    weapon_frame = 0;
+    draw_healthbar(barx, bary, barx + barlength, bary + offset, staminapercent, c_ltgray, c_white, c_yellow, 0, true, true);
+    if (maxmana &gt;= SPELL_COST) {
+        bary += offset * 2.8;
+        draw_healthbar(barx, bary, barx + barlength, bary + offset, manapercent, c_ltgray, c_gray, c_blue, 0, true, true);
+    }
+    
+    //Draw weapon HUD
+    var weaponx = display_get_gui_width() * .9;
+    var weapony = display_get_gui_height() div 13.5;
+    var scale = display_get_gui_width() * .004;
+    var weapon_offset = scale * 14;
+    draw_sprite_ext(spr_weapon_box, 0, weaponx, weapony, scale, scale, 90, c_white, .5);
+    //weapon_sprite
+    draw_sprite_ext(weapon_sprite, weapon_frame++ div 10, weaponx, weapony + weapon_offset, scale, scale, 90, c_white, 1);
+    
+    if (weapon_frame &gt;= 60) {
+        weapon_frame = 0;
+    }
 }
 // draw on-screen controls if needed
-if (onscreen_controls) {
-    scr_draw_onscreen_controls();
-}
-
+ if (onscreen_controls) {
+     scr_draw_onscreen_controls();
+ }
 </string>
           </argument>
         </arguments>
