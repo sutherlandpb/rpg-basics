@@ -1,4 +1,4 @@
-///scr_draw_with_shadow()
+///scr_draw_with_shadow(x, y, message)
 var xx = argument[0];
 var yy = argument[1];
 var msg = argument[2];

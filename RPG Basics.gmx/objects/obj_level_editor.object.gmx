@@ -28,40 +28,17 @@
             <string>///create level
 
 //tileset
-var wall_tileset = bg_wall_tiles;
-var floor_tile = bg_tile;
-var tileset_max = 3;
-switch(irandom(tileset_max)) {
-    case 0 :
-        wall_tileset = bg_wall_tiles;
-        floor_tile = bg_tile;
-        break;
-    case 1 : 
-        wall_tileset = bg_wall_red;
-        floor_tile = bg_tile_red;
-        break;
-    case 2 : 
-        wall_tileset = bg_wall_gray;
-        floor_tile = bg_tile_grass;
-        break;
-    case 3 : 
-        wall_tileset = bg_wall_wood;
-        floor_tile = bg_tile_grass;
-        break;        
-    
-}
-
-
-//enemies
-max_enemy_count = 0;
-enemy_count = 0;
+wall_tileset = bg_wall_tiles;
+floor_tile = bg_tile;
+tileset_max = 3;
+scr_select_tileset(tileset_max);
 //resize
 room_width = (CELL_WIDTH/16) * 720;
 room_height = (CELL_HEIGHT/16) * 720;
 
 //set the grid width and height
-var width = room_width div CELL_WIDTH;
-var height = room_height div CELL_HEIGHT;
+width = room_width div CELL_WIDTH;
+height = room_height div CELL_HEIGHT;
 
 //create grid
 grid = ds_grid_create(width, height);
@@ -76,10 +53,6 @@ randomize();
 var cx = width div 2;
 var cy = height div 2;
 
-if (instance_exists(obj_player)) {
-    obj_player.phy_position_x = cx * CELL_WIDTH + CELL_WIDTH / 2;
-    obj_player.phy_position_y = cy * CELL_HEIGHT + CELL_HEIGHT / 2;
-}
 //direction of controller (directions 0-3)
 var cdir = irandom(3);
 
@@ -106,158 +79,133 @@ repeat (1000) {
     cy = clamp(cy, 1, height - 2);
 }
 
-//add walls if needed
-for (var yy = 1; yy &lt; height - 1; yy++) {
-    for (var xx = 1; xx &lt; width - 1; xx++) {   
-        if (grid[# xx, yy] == FLOOR) {
-            if (grid[# xx + 1, yy] != FLOOR){
-                //right
-                grid[# xx + 1, yy] = WALL;
-            }
-            if (grid[# xx - 1, yy] != FLOOR){
-                //left
-                grid[# xx - 1, yy] = WALL;
-            }            
-            if (grid[# xx, yy + 1] != FLOOR){
-                //down
-                grid[# xx, yy + 1] = WALL;
-            }
-            if (grid[# xx, yy - 1] != FLOOR){
-                //up
-                grid[# xx, yy - 1] = WALL;
-            }
-           
-        }
+//adds walls to the grid where needed
+scr_add_walls(height, width);
+scr_draw_level(height, width);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// control the room
+var view = 0;
+var amount = view_wview[view]/80;
+
+scr_get_input();
+
+if (up_key) {
+    view_yview[view] -= amount;
+}
+if (down_key) {
+    view_yview[view] += amount;
+}
+if (left_key) {
+    view_xview[view] -= amount;
+}
+if (right_key) { 
+    view_xview[view] += amount;
+}
+
+if (mouse_wheel_up()) {
+    scr_editor_zoom(-.1, view);
+}
+if (mouse_wheel_down()) {
+    scr_editor_zoom(.1, view);
+}
+
+//add a floor tile
+if (mouse_check_button(mb_left)) {
+    var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
+    if (tile_type != FLOOR) {
+        //set it to floor        
+        obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = FLOOR;
+        tile_layer_delete(0);
+        scr_draw_level(height, width);
     }
 }
-// remove single walls
-for (var yy = 1; yy &lt; height - 1; yy++) {
-    for (var xx = 1; xx &lt; width - 1; xx++) {
-        if (grid[# xx, yy] == WALL 
-                &amp;&amp; grid[# xx + 1, yy] == FLOOR 
-                &amp;&amp; grid[# xx - 1, yy] == FLOOR             
-                &amp;&amp; grid[# xx, yy + 1] == FLOOR 
-                &amp;&amp; grid[# xx, yy - 1] == FLOOR) {
-            grid[# xx, yy] = FLOOR;         
+
+//remove tile
+if mouse_check_button(mb_right) {
+    var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
+    if (tile_type != VOID) {
+        //delete the tile and set it to void
+        var tile;
+        tile = tile_layer_find(0, mouse_x, mouse_y);
+        if tile_exists(tile) tile_delete(tile);
+
+        //set it to VOID, and all surrounding tiles that are walls to void (they will be filled in if needed)  
+        obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = VOID;        
+        //surrounding
+        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] == WALL) {
+            obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] = VOID;
         }
+        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] == WALL) {
+            obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] = VOID;
+        }
+        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] == WALL) {
+            obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] = VOID;
+        }
+        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] == WALL) {
+            obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] = VOID;
+        }
+        
+        tile_layer_delete(0);
+        scr_draw_level(height, width);
     }
+
+
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw UI
 
-var have_placed_door = false;
-// draw the floor
-for (var yy = 0; yy &lt; height; yy++) {
-    for (var xx = 0; xx &lt; width; xx++) {
-        if (grid[# xx, yy] == FLOOR) {
-            tile_add(floor_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 99999);             
-            var odds = 20;   
-            var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
-            var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
-            var roll = irandom(odds);
-            var roll2 = irandom(odds);
-            if (instance_exists(obj_player)) {
-                if (point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 80 &amp;&amp; roll == odds) {
-                    if (have_placed_door){                    
-                        if (roll2 &gt; odds -1){                    
-                            scr_make_purple_slime(ex, ey);
-                        } else if (roll2 &gt; odds - 3) { 
-                            scr_make_red_slime(ex, ey);
-                        } else if (roll2 &gt; odds - 6) {  
-                            instance_create(ex, ey, obj_enemy_chinlin);
-                        } else if (roll2 &gt; odds - 10) {
-                            instance_create(ex, ey, obj_enemy_bat);
-                        } else {
-                            instance_create(ex, ey, obj_enemy_slime);
-                        }
-                        enemy_count++;
-                        max_enemy_count++;
-                    } else {                
-                        instance_create(ex , ey, obj_exit_door);
-                        have_placed_door = true; 
-                    }
-                }
-            }
-        }        
-    }
-}        
-// get tile sizez
-var tw = CELL_WIDTH / 2;
-var th = CELL_HEIGHT / 2;
+var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
+scr_draw_with_shadow(32, 32, "Tile: " + string(tile_type));
 
-// add the wall tiles
-for (var yy = 0; yy &lt; height * 2; yy++){
-    for (var xx = 0; xx &lt; width * 2; xx++) {
-        if (grid[# xx div 2, yy div 2] == FLOOR) {
-            // get tile x and y
-            var tx = xx * tw;
-            var ty = yy * th;            
-            
-            var right = grid[# (xx + 1) div 2, yy div 2] != FLOOR;
-            var left = grid[# (xx - 1) div 2, yy div 2] != FLOOR;
-            var top = grid[# xx div 2, (yy - 1) div 2] != FLOOR;
-            var bottom = grid[# xx div 2, (yy + 1) div 2] != FLOOR;
-            
-            var top_right = grid[# (xx + 1) div 2, (yy - 1) div 2] != FLOOR;
-            var top_left = grid[# (xx - 1) div 2, (yy - 1) div 2] != FLOOR;
-            var bottom_right = grid[# (xx + 1) div 2, (yy + 1) div 2] != FLOOR;
-            var bottom_left = grid[# (xx - 1) div 2, (yy + 1) div 2] != FLOOR;
-            
-            if (right) {
-                if (bottom) { 
-                    tile_add(wall_tileset, tw * 4, th * 1, tw, th, tx+tw, ty, -ty);
-                } else if (top) {
-                    if (top_right) {
-                        tile_add(wall_tileset, tw * 4, th * 0, tw, th, tx+tw, ty-th, -ty);                    
-                    } else {
-                        tile_add(wall_tileset, tw * 3, th * 0, tw, th, tx, ty-th, -ty);
-                    }
-                    tile_add(wall_tileset, tw*0, th*1, tw, th, tx+tw, ty, -ty);    
-                } else {
-                    tile_add(wall_tileset, tw * 0, th * 1, tw, th, tx+tw, ty, -ty);
-                }
-            }
-            
-            if (left) {
-                if (bottom) {
-                    tile_add(wall_tileset, tw * 3, th * 1, tw, th, tx-tw, ty, -ty);
-                } else if (top) {
-                    if (top_left) {
-                        tile_add(wall_tileset, tw * 3, th * 0, tw, th, tx-tw, ty-th, -ty);
-                    } else {
-                        tile_add(wall_tileset, tw * 4, th * 0, tw, th, tx, ty-th, -ty);
-                    }          
-                    tile_add(wall_tileset, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);      
-                } else {                
-                    tile_add(wall_tileset, tw * 2, th * 1, tw, th, tx - tw, ty, -ty);
-                }
-            }
-            
-            if (top) {
-                if (!top_right) {
-                    tile_add(wall_tileset, tw * 2, th * 2, tw, th, tx, ty-th, -ty+tw);
-                } else if (!top_left) {
-                    tile_add(wall_tileset, tw * 0, th * 2, tw, th, tx, ty-th, -ty+tw);
-                 } else {
-                    tile_add(wall_tileset, tw * 1, th * 2, tw, th, tx, ty-th, -ty+tw);
-                }
-                                
-            }
-            
-            if (bottom) {
-                if (!bottom_right) {
-                    tile_add(wall_tileset, tw * 2, th * 0, tw, th, tx, ty, -ty-tw);
-                } else if (!bottom_left) {
-                    tile_add(wall_tileset, tw * 0, th * 0, tw, th, tx, ty, -ty-tw);
-                 } else {
-                    tile_add(wall_tileset, tw * 1, th * 0, tw, th, tx, ty, -ty-tw);
-                }
-            
-            }
-            
-        }
-    }
-}
+
+
+
 
 </string>
           </argument>

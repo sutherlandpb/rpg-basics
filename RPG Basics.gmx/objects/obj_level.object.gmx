@@ -256,7 +256,8 @@ for (var yy = 0; yy &lt; height * 2; yy++){
         }
     }
 }
-obj_player_stats.random_count += 1;
+
+
 </string>
           </argument>
         </arguments>

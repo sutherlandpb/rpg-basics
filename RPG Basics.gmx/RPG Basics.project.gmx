@@ -115,6 +115,12 @@
     <script>scripts\scr_sprite_dissolve.gml</script>
     <script>scripts\scr_sprite_radial.gml</script>
     <script>scripts\scr_sprite_asymble.gml</script>
+    <script>scripts\scr_editor_zoom.gml</script>
+    <scripts name="level_editor">
+      <script>scripts\scr_select_tileset.gml</script>
+      <script>scripts\scr_add_walls.gml</script>
+      <script>scripts\scr_draw_level.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_50_xp</object>
@@ -130,7 +136,6 @@
     <object>objects\obj_enemy_bat</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_crow</object>
-    <object>objects\obj_pet_crow</object>
     <object>objects\obj_enemy_fly</object>
     <object>objects\obj_enemy_kitty_no</object>
     <object>objects\obj_enemy_parent</object>
@@ -146,9 +151,11 @@
     <object>objects\obj_level_editor</object>
     <object>objects\obj_mana</object>
     <object>objects\obj_pause_menu</object>
+    <object>objects\obj_pet_crow</object>
     <object>objects\obj_player</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_projectile</object>
+    <object>objects\obj_rainbow_sword</object>
     <object>objects\obj_random_door</object>
     <object>objects\obj_sign</object>
     <object>objects\obj_speaker</object>
@@ -157,22 +164,20 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_bone_sword_item</object>
-    <object>objects\obj_rainbow_sword</object>
     <object>objects\obj_weapon_item</object>
     <object>objects\obj_wide_wall</object>
-    <objects name="rm_explosion">
-      <object>objects\obj_demo_particle</object>
+    <objects name="rm_asymble">
+      <object>objects\obj_asymble_particle</object>
     </objects>
     <objects name="rm_dissolve">
       <object>objects\obj_dissolve_particle</object>
     </objects>
+    <objects name="rm_explosion">
+      <object>objects\obj_demo_particle</object>
+    </objects>
     <objects name="rm_radial">
       <object>objects\obj_radial_particle</object>
     </objects>
-    <objects name="rm_asymble">
-      <object>objects\obj_asymble_particle</object>
-    </objects>
-    <object>objects\obj_editor_view_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
