@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///create level
+            <string>
+///create level
 
 //tileset
 wall_tileset = bg_wall_tiles;
@@ -47,38 +48,8 @@ grid = ds_grid_create(width, height);
 //fill the grid with void values
 ds_grid_set_region(grid, 0, 0, width - 1, height -1, VOID);
 
-//randomize the level
-randomize();
-
-//create the controller in the center of the grid
-var cx = width div 2;
-var cy = height div 2;
-
-//direction of controller (directions 0-3)
-var cdir = irandom(3);
-
-// the odds variable for changing direction
-var odds = 1;
-
-//create the level using 1000 steps
-repeat (1000) {
-    //place a floor tile at the controller position
-    grid[# cx, cy] = FLOOR;
-         
-    //randomize direction
-    if (irandom(odds) == odds) {
-        cdir = irandom(3);        
-    }
-    //move the controller
-    var xdir = lengthdir_x(1, cdir * 90);
-    var ydir = lengthdir_y(1, cdir * 90);
-    cx += xdir;
-    cy += ydir;
-    
-    //make sure we don't move outside the grid
-    cx = clamp(cx, 1, width - 2);
-    cy = clamp(cy, 1, height - 2);
-}
+//create a random grid within the width and height dimensions
+scr_randomize_grid(height, width);
 
 //adds walls to the grid where needed
 scr_add_walls(height, width);
@@ -209,8 +180,28 @@ if mouse_check_button(mb_right) {
             <string>/// draw UI
 
 var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
-scr_draw_with_shadow(32, 32, "Tile: " + string(tile_type) + " Tileset: " + string(current_tileset));
+var tile_string = scr_get_tileset_name(current_tileset);
+var type_string = "";
+switch(tile_type) {
+    case FLOOR : 
+        type_string = "Floor";
+        break;
+    case WALL : 
+        type_string = "Wall";
+        break;
+    case VOID : 
+        type_string = "Void";
+        break;            
+    
+}
 
+scr_draw_with_shadow(32, 32, "Tile: " + type_string + " MouseX,Y: " + string(mouse_x) + "," + string(mouse_y));
+scr_draw_with_shadow(32, 64, "Tileset: " + tile_string);
+
+
+
+//draw the menu
+scr_draw_editor_menu();
 
 
 

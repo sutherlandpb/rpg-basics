@@ -108,8 +108,6 @@
       <script>scripts\scr_knockback_if_possible.gml</script>
       <script>scripts\scr_select_weapon.gml</script>
       <script>scripts\scr_draw_onscreen_controls.gml</script>
-      <script>scripts\scr_load_level.gml</script>
-      <script>scripts\scr_save_level.gml</script>
     </scripts>
     <script>scripts\scr_sprite_explode.gml</script>
     <script>scripts\scr_sprite_dissolve.gml</script>
@@ -120,6 +118,11 @@
       <script>scripts\scr_select_tileset.gml</script>
       <script>scripts\scr_add_walls.gml</script>
       <script>scripts\scr_draw_level.gml</script>
+      <script>scripts\scr_randomize_grid.gml</script>
+      <script>scripts\scr_get_tileset_name.gml</script>
+      <script>scripts\scr_load_level.gml</script>
+      <script>scripts\scr_save_level.gml</script>
+      <script>scripts\scr_draw_editor_menu.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
