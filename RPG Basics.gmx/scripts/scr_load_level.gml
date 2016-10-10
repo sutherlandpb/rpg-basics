@@ -1,4 +1,4 @@
-//scr_load_level(level_name)
+///scr_load_level(level_name)
 var filename = argument[0];
 
 ini_open(filename);

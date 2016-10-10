@@ -42,6 +42,8 @@
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_exit_door</sprite>
+    <sprite>sprites\spr_save</sprite>
+    <sprite>sprites\spr_open</sprite>
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_dialog_box</sprite>
     <sprite>sprites\spr_sword</sprite>

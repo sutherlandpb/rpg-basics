@@ -10,6 +10,14 @@ spell_key = keyboard_check_pressed(vk_lcontrol);
 pause_key = keyboard_check_pressed(vk_escape);
 show_controls_key = keyboard_check_pressed(vk_tab);
 edit_key = keyboard_check_pressed(vk_f1);
+num0_key = keyboard_check_pressed(vk_numpad0);
+num1_key = keyboard_check_pressed(vk_numpad1);
+num2_key = keyboard_check_pressed(vk_numpad2);
+num3_key = keyboard_check_pressed(vk_numpad3);
+num4_key = keyboard_check_pressed(vk_numpad4);
+num5_key = keyboard_check_pressed(vk_numpad5);
+
+
 //get the axis
 xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);

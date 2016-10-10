@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-///create level
+            <string>///create level Editor
+current_tool = EDITOR_FLOOR;
+current_enemy = ENEMY_SLIME;
+current_enemy_sprite = spr_enemy_slime;
 
 //tileset
 wall_tileset = bg_wall_tiles;
@@ -92,7 +94,29 @@ if (spell_key) {
     }
     scr_draw_level(height, width);
 }
+//tools
+if (num0_key) {
+    current_tool = EDITOR_FLOOR;
+}
+if (num1_key) {
+    current_tool = EDITOR_ENEMY;
+}
+if (num2_key) {
+    current_tool = EDITOR_EXIT;
+}
+if (num3_key) {
+    current_tool = EDITOR_FLOOR;
+    var msg = get_string("Save Level", "")
+    scr_save_level(msg, grid, current_tileset);
+}
+if (num4_key) {
+    current_tool = EDITOR_FLOOR;
+    var msg = get_string("Open Level", "")
+    scr_load_level(msg);
+    scr_draw_level(height, width);
+}
 
+//PAN
 if (up_key) {
     view_yview[view] -= amount;
 }
@@ -105,7 +129,7 @@ if (left_key) {
 if (right_key) { 
     view_xview[view] += amount;
 }
-
+//zoom
 if (mouse_wheel_up()) {
     scr_editor_zoom(-.1, view);
 }
@@ -113,8 +137,18 @@ if (mouse_wheel_down()) {
     scr_editor_zoom(.1, view);
 }
 
+var button_width = display_get_gui_width() div 18;
+var ignorex = button_width * 1.5;
+
+var mousex = device_mouse_x_to_gui(0);
+var mousey = device_mouse_y_to_gui(0);
+var ignore_mouse = false;
+if (mousex &lt;= ignorex) {
+    ignore_mouse = true;
+}
+
 //add a floor tile
-if (mouse_check_button(mb_left)) {
+if (!ignore_mouse &amp;&amp; mouse_check_button(mb_left)) {
     var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
     if (tile_type != FLOOR) {
         //set it to floor        
@@ -122,9 +156,8 @@ if (mouse_check_button(mb_left)) {
         scr_draw_level(height, width);
     }
 }
-
 //remove tile
-if mouse_check_button(mb_right) {
+if (!ignore_mouse &amp;&amp; mouse_check_button(mb_right)) {
     var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
     if (tile_type != VOID) {
         //delete the tile and set it to void
@@ -150,8 +183,6 @@ if mouse_check_button(mb_right) {
         
         scr_draw_level(height, width);
     }
-
-
 }
 
 
@@ -195,13 +226,14 @@ switch(tile_type) {
     
 }
 
-scr_draw_with_shadow(32, 32, "Tile: " + type_string + " MouseX,Y: " + string(mouse_x) + "," + string(mouse_y));
+//draw the menu
+scr_draw_editor_menu();
+scr_draw_with_shadow(32, 32, "Tile: " + type_string);
 scr_draw_with_shadow(32, 64, "Tileset: " + tile_string);
 
 
 
-//draw the menu
-scr_draw_editor_menu();
+
 
 
 

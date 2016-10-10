@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="24">
+    <constants number="36">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
@@ -659,6 +659,18 @@
       <constant name="WEAPON_AXE">1</constant>
       <constant name="WEAPON_BONE">2</constant>
       <constant name="WEAPON_RAINBOW">3</constant>
+      <constant name="EDITOR_FLOOR">100</constant>
+      <constant name="EDITOR_ENEMY">101</constant>
+      <constant name="EDITOR_EXIT">102</constant>
+      <constant name="EDITOR_SAVE">103</constant>
+      <constant name="EDITOR_OPEN">104</constant>
+      <constant name="ENEMY_SLIME">200</constant>
+      <constant name="ENEMY_CHINLIN">201</constant>
+      <constant name="ENEMY_BAT">202</constant>
+      <constant name="ENEMY_FLY">203</constant>
+      <constant name="ENEMY_SKELETON">204</constant>
+      <constant name="ENEMY_KITTY_NO">205</constant>
+      <constant name="ENEMY_CROW">206</constant>
     </constants>
   </ConfigConstants>
 </Config>
