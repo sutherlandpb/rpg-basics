@@ -12,11 +12,30 @@ scr_select_tileset(current_tileset);
 for (var yy = 0; yy < height; yy++) {
     for (var xx = 0; xx < width; xx++) {
         if (grid[# xx, yy] == FLOOR) {
-            tile_add(floor_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);             
-            var odds = 20;   
             var ex = xx * CELL_WIDTH + CELL_WIDTH/2; 
             var ey = yy * CELL_HEIGHT + CELL_HEIGHT/2; 
-        }        
+            if (grid_items[# xx, yy] == ENEMY_SLIME) {
+                draw_sprite(spr_enemy_slime, image_index, ex, ey);
+            } else if (grid_items[# xx, yy] == ENEMY_CHINLIN) {
+                draw_sprite(spr_chinlin_run_right, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == ENEMY_BAT) {
+                draw_sprite(spr_bat_rest, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == ENEMY_FLY) {
+                draw_sprite(spr_fly, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == ENEMY_SKELETON) {
+                draw_sprite(spr_big_skeleton, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == ENEMY_KITTY_NO) {
+                draw_sprite(spr_kitty_no, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == ENEMY_CROW) {
+                draw_sprite(spr_crow, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);
+            } else if (grid_items[# xx, yy] == EXIT_DOOR) {
+                draw_sprite(spr_exit_door, image_index, xx + CELL_WIDTH/2, yy + CELL_HEIGHT/2);      
+            } else {
+                tile_add(floor_tile, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);             
+            }
+        }
+        
+        
     }
 }        
 // get tile sizez

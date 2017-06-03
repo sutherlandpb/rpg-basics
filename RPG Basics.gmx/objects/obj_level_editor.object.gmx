@@ -46,9 +46,11 @@ height = room_height div CELL_HEIGHT;
 
 //create grid
 grid = ds_grid_create(width, height);
+grid_items = ds_grid_create(width, height);
 
 //fill the grid with void values
 ds_grid_set_region(grid, 0, 0, width - 1, height -1, VOID);
+ds_grid_set_region(grid_items, 0, 0, width - 1, height -1, VOID);
 
 //create a random grid within the width and height dimensions
 scr_randomize_grid(height, width);
@@ -149,40 +151,51 @@ if (mousex &lt;= ignorex) {
 
 //add a floor tile
 if (!ignore_mouse &amp;&amp; mouse_check_button(mb_left)) {
-    var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
-    if (tile_type != FLOOR) {
-        //set it to floor        
-        obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = FLOOR;
-        scr_draw_level(height, width);
+    if (current_tool == EDITOR_FLOOR) { 
+        var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
+        if (tile_type != FLOOR) {
+            //set it to floor        
+            obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = FLOOR;            
+        }
+    } else if (current_tool == EDITOR_ENEMY) {
+        obj_level_editor.grid_items[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = current_enemy;        
+    } else if (current_tool == EDITOR_EXIT) {
+        obj_level_editor.grid_items[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = EXIT_DOOR;        
     }
+    scr_draw_level(height, width);
 }
 //remove tile
 if (!ignore_mouse &amp;&amp; mouse_check_button(mb_right)) {
-    var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
-    if (tile_type != VOID) {
-        //delete the tile and set it to void
-        var tile;
-        tile = tile_layer_find(0, mouse_x, mouse_y);
-        if tile_exists(tile) tile_delete(tile);
-
-        //set it to VOID, and all surrounding tiles that are walls to void (they will be filled in if needed)  
-        obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = VOID;        
-        //surrounding
-        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] == WALL) {
-            obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] = VOID;
+    if (current_tool == EDITOR_FLOOR) { 
+        var tile_type = obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT];
+        if (tile_type != VOID) {
+            //delete the tile and set it to void
+            var tile;
+            tile = tile_layer_find(0, mouse_x, mouse_y);
+            if tile_exists(tile) tile_delete(tile);
+    
+            //set it to VOID, and all surrounding tiles that are walls to void (they will be filled in if needed)  
+            obj_level_editor.grid[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = VOID;        
+            //surrounding
+            if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] == WALL) {
+                obj_level_editor.grid[# (mouse_x div CELL_WIDTH) -1, (mouse_y div CELL_HEIGHT) ] = VOID;
+            }
+            if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] == WALL) {
+                obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] = VOID;
+            }
+            if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] == WALL) {
+                obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] = VOID;
+            }
+            if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] == WALL) {
+                obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] = VOID;
+            }       
         }
-        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] == WALL) {
-            obj_level_editor.grid[# (mouse_x div CELL_WIDTH) +1, (mouse_y div CELL_HEIGHT)] = VOID;
-        }
-        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] == WALL) {
-            obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) -1] = VOID;
-        }
-        if (obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] == WALL) {
-            obj_level_editor.grid[# (mouse_x div CELL_WIDTH), (mouse_y div CELL_HEIGHT) +1] = VOID;
-        }       
-        
-        scr_draw_level(height, width);
-    }
+    } else if (current_tool == EDITOR_ENEMY) {
+        obj_level_editor.grid_items[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = VOID;                
+    } else if (current_tool == EDITOR_EXIT) {
+        obj_level_editor.grid_items[# mouse_x div CELL_WIDTH, mouse_y div CELL_HEIGHT] = VOID;            
+    }    
+    scr_draw_level(height, width);
 }
 
 

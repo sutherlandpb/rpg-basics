@@ -61,7 +61,6 @@
     <sprite>sprites\spr_crow</sprite>
     <sprite>sprites\spr_kitty_no</sprite>
     <sprite>sprites\spr_arrow_right</sprite>
-    <sprite>sprites\spr_demo_player</sprite>
     <sprite>sprites\spr_rectangle</sprite>
   </sprites>
   <backgrounds name="background">
@@ -115,7 +114,6 @@
     <script>scripts\scr_sprite_dissolve.gml</script>
     <script>scripts\scr_sprite_radial.gml</script>
     <script>scripts\scr_sprite_asymble.gml</script>
-    <script>scripts\scr_editor_zoom.gml</script>
     <scripts name="level_editor">
       <script>scripts\scr_select_tileset.gml</script>
       <script>scripts\scr_add_walls.gml</script>
@@ -125,6 +123,7 @@
       <script>scripts\scr_load_level.gml</script>
       <script>scripts\scr_save_level.gml</script>
       <script>scripts\scr_draw_editor_menu.gml</script>
+      <script>scripts\scr_editor_zoom.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
