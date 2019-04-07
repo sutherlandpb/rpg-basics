@@ -6,7 +6,7 @@ var button_height = button_width;
 var button_x;
 var button_y;
 button_x[0] = button_width * 1.5;
-button_y[0] = button_height * 7;
+button_y[0] = button_height * 4;
 button_x[1] = button_x[0];
 button_y[1] = button_y[0] + (button_height * 2);
 button_x[2] = button_x[0] - button_height;
