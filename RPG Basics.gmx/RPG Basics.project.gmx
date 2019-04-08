@@ -15,6 +15,7 @@
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\sprite_bg_tile</sprite>
+    <sprite>sprites\outworld_bg</sprite>
     <sprite>sprites\spr_enemy_slime</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player_attack_down</sprite>
@@ -41,6 +42,7 @@
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_dungeon</sprite>
     <sprite>sprites\spr_exit_door</sprite>
     <sprite>sprites\spr_save</sprite>
     <sprite>sprites\spr_open</sprite>
@@ -184,13 +186,59 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_one</room>
-    <room>rooms\rm_two</room>
-    <room>rooms\rm_three</room>
-    <room>rooms\rm_pause</room>
+    <room>rooms\rm_00_00</room>
+    <room>rooms\rm_00_01</room>
+    <room>rooms\rm_00_02</room>
+    <room>rooms\rm_00_03</room>
+    <room>rooms\rm_00_04</room>
+    <room>rooms\rm_00_05</room>
+    <room>rooms\rm_00_06</room>
+    <room>rooms\rm_00_07</room>
+    <room>rooms\rm_00_08</room>
+    <room>rooms\rm_00_09</room>
+    <room>rooms\rm_00_10</room>
+    <room>rooms\rm_00_11</room>
+    <room>rooms\rm_00_12</room>
+    <room>rooms\rm_00_13</room>
+    <room>rooms\rm_00_14</room>
+    <room>rooms\rm_00_15</room>
+    <room>rooms\rm_01_00</room>
+    <room>rooms\rm_01_01</room>
+    <room>rooms\rm_01_02</room>
+    <room>rooms\rm_01_03</room>
+    <room>rooms\rm_01_04</room>
+    <room>rooms\rm_01_05</room>
+    <room>rooms\rm_01_06</room>
+    <room>rooms\rm_01_07</room>
+    <room>rooms\rm_01_08</room>
+    <room>rooms\rm_01_09</room>
+    <room>rooms\rm_01_10</room>
+    <room>rooms\rm_01_11</room>
+    <room>rooms\rm_01_12</room>
+    <room>rooms\rm_01_13</room>
+    <room>rooms\rm_01_14</room>
+    <room>rooms\rm_01_15</room>
+    <room>rooms\rm_02_00</room>
+    <room>rooms\rm_03_00</room>
+    <room>rooms\rm_04_00</room>
+    <room>rooms\rm_05_00</room>
+    <room>rooms\rm_06_00</room>
+    <room>rooms\rm_07_00</room>
+    <room>rooms\rm_08_00</room>
+    <room>rooms\rm_09_00</room>
+    <room>rooms\rm_10_00</room>
+    <room>rooms\rm_11_00</room>
+    <room>rooms\rm_12_00</room>
+    <room>rooms\rm_13_00</room>
+    <room>rooms\rm_14_00</room>
+    <room>rooms\rm_15_00</room>
     <room>rooms\rm_dead</room>
-    <room>rooms\rm_random</room>
     <room>rooms\rm_level_editor</room>
+    <room>rooms\rm_one</room>
+    <room>rooms\rm_pause</room>
+    <room>rooms\rm_random</room>
+    <room>rooms\rm_three</room>
+    <room>rooms\rm_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
