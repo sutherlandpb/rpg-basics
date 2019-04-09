@@ -3,8 +3,8 @@
   <caption></caption>
   <width>672</width>
   <height>360</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>-1</persistent>
@@ -153,7 +153,7 @@
     <instance objName="obj_enemy_bat" x="128" y="288" name="inst_B88E96CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_fly" x="512" y="32" name="inst_722A6696" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_crow" x="32" y="160" name="inst_A5993F9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="640" y="128" name="inst_0ABB92EB" locked="0" code="new_room = rm_00_00;&#xA;new_x = 40;&#xA;new_y = 128;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="624" y="128" name="inst_0ABB92EB" locked="0" code="new_room = rm_00_00;&#xA;new_x = 40;&#xA;new_y = 128;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

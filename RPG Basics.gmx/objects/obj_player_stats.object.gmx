@@ -286,6 +286,10 @@ room_start_action = NEW_ROOM;
         scr_draw_with_shadow(xx, yy * ++listnum, "MANA: " + string(mana) + "/" + string(maxmana));
     }
     scr_draw_with_shadow(xx, yy * ++listnum, "LEVEL: " + string(level));
+    scr_draw_with_shadow(xx, yy * ++listnum, "ROOM: " + string(room_get_name(room)));
+
+//    scr_draw_with_shadow(xx, yy * ++listnum, "X: " + string(obj_player.x) + "Y: " + string(obj_player.y));
+
     bary += offset * 3.5;
     draw_healthbar(barx, bary, barx + barlength, bary + offset, hppercent, c_ltgray, c_red, c_green, 0, true, true);
     bary += offset * 2.8;
@@ -294,6 +298,7 @@ room_start_action = NEW_ROOM;
         bary += offset * 2.8;
         draw_healthbar(barx, bary, barx + barlength, bary + offset, manapercent, c_ltgray, c_gray, c_blue, 0, true, true);
     }
+    
     
     //Draw weapon HUD
     var weaponx = display_get_gui_width() * .9;

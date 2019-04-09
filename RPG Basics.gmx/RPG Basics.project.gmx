@@ -42,6 +42,10 @@
     <sprite>sprites\spr_wide_wall</sprite>
     <sprite>sprites\spr_tall_wall</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_up_door</sprite>
+    <sprite>sprites\spr_down_door</sprite>
+    <sprite>sprites\spr_left_door</sprite>
+    <sprite>sprites\spr_right_door</sprite>
     <sprite>sprites\spr_dungeon</sprite>
     <sprite>sprites\spr_exit_door</sprite>
     <sprite>sprites\spr_save</sprite>
@@ -111,6 +115,10 @@
       <script>scripts\scr_knockback_if_possible.gml</script>
       <script>scripts\scr_select_weapon.gml</script>
       <script>scripts\scr_draw_onscreen_controls.gml</script>
+      <script>scripts\scr_move_down.gml</script>
+      <script>scripts\scr_move_right.gml</script>
+      <script>scripts\scr_move_left.gml</script>
+      <script>scripts\scr_move_up.gml</script>
     </scripts>
     <script>scripts\scr_sprite_explode.gml</script>
     <script>scripts\scr_sprite_dissolve.gml</script>
@@ -139,6 +147,10 @@
     <object>objects\obj_dialog</object>
     <object>objects\obj_died_menu</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_up_door</object>
+    <object>objects\obj_left_door</object>
+    <object>objects\obj_right_door</object>
+    <object>objects\obj_down_door</object>
     <object>objects\obj_enemy_bat</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_enemy_crow</object>
@@ -186,6 +198,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_one</room>
     <room>rooms\rm_00_00</room>
     <room>rooms\rm_00_01</room>
     <room>rooms\rm_00_02</room>
@@ -234,7 +247,6 @@
     <room>rooms\rm_15_00</room>
     <room>rooms\rm_dead</room>
     <room>rooms\rm_level_editor</room>
-    <room>rooms\rm_one</room>
     <room>rooms\rm_pause</room>
     <room>rooms\rm_random</room>
     <room>rooms\rm_three</room>

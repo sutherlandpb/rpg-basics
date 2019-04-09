@@ -116,6 +116,29 @@ if (obj_player_stats.hp &lt;= 0) {
     room_goto(rm_dead);
 }
 
+if obj_player.y &gt; 350 {
+    script_execute(scr_move_down())
+}
+
+if obj_player.y &lt; 10 {
+    script_execute(scr_move_up())
+}
+
+if obj_player.y &gt; 330 {
+    script_execute(scr_move_down())
+}
+
+if obj_player.x &lt; 20 {
+    script_execute(scr_move_left())
+}
+
+if obj_player.x &gt; 624 {
+    script_execute(scr_move_right())
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -296,6 +319,278 @@ if (room_exists(other.new_room)) {
     x = other.new_x;
     y = other.new_y;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_down_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// DOWN through the door
+
+var curRoom = room_get_name(room);
+var tempX = "";
+var tempY = "";
+
+curRoom = string_digits(curRoom);
+
+// spit the curRoom string in half and store each half in a variable
+for (i = 1; i &lt; (string_length(curRoom) / 2) + 1; i++ ) {
+    tempX += string_char_at(curRoom, i);
+}
+
+for (i = (string_length(curRoom)/2) + 1; i &lt; string_length(curRoom) + 1; i++ ) {
+    tempY += string_char_at(curRoom, i);
+}
+
+// convert coords to numbers
+tempX = real(tempX);
+tempY = real(tempY);
+
+// alter coordinates based on which direction the player left the room
+//down movement means y + 1
+tempY += 1;
+strX = string(tempX);
+if string_length(strX) = 1 {
+   strX = "0" + strX;
+}
+strY = string(tempY);
+if string_length(strY) = 1 {
+   strY = "0" + strY;
+}
+
+// construct the new string based on the naming convention
+var nextRoom = "rm_" + strX + "_" + strY;
+
+if (room_exists(asset_get_index(nextRoom))) {
+    room_goto(asset_get_index(nextRoom));
+    //down means shift y
+    y = 32;        
+}
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_right_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// RIGHT through the door
+
+var curRoom = room_get_name(room);
+var tempX = "";
+var tempY = "";
+
+curRoom = string_digits(curRoom);
+
+// spit the curRoom string in half and store each half in a variable
+for (i = 1; i &lt; (string_length(curRoom) / 2) + 1; i++ ) {
+    tempX += string_char_at(curRoom, i);
+}
+
+for (i = (string_length(curRoom)/2) + 1; i &lt; string_length(curRoom) + 1; i++ ) {
+    tempY += string_char_at(curRoom, i);
+}
+
+// convert coords to numbers
+tempX = real(tempX);
+tempY = real(tempY);
+
+// alter coordinates based on which direction the player left the room
+//right movement means x + 1
+tempX += 1;
+strX = string(tempX);
+if string_length(strX) = 1 {
+   strX = "0" + strX;
+}
+strY = string(tempY);
+if string_length(strY) = 1 {
+   strY = "0" + strY;
+}
+
+// construct the new string based on the naming convention
+var nextRoom = "rm_" + strX + "_" + strY;
+
+if (room_exists(asset_get_index(nextRoom))) {
+    room_goto(asset_get_index(nextRoom));
+    //right means shift x
+    x = 40;        
+}
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_left_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// LEFT through the door
+
+var curRoom = room_get_name(room);
+var tempX = "";
+var tempY = "";
+
+curRoom = string_digits(curRoom);
+
+// spit the curRoom string in half and store each half in a variable
+for (i = 1; i &lt; (string_length(curRoom) / 2) + 1; i++ ) {
+    tempX += string_char_at(curRoom, i);
+}
+
+for (i = (string_length(curRoom)/2) + 1; i &lt; string_length(curRoom) + 1; i++ ) {
+    tempY += string_char_at(curRoom, i);
+}
+
+// convert coords to numbers
+tempX = real(tempX);
+tempY = real(tempY);
+
+// alter coordinates based on which direction the player left the room
+//left movement means x - 1
+tempX -= 1;
+strX = string(tempX);
+if string_length(strX) = 1 {
+   strX = "0" + strX;
+}
+strY = string(tempY);
+if string_length(strY) = 1 {
+   strY = "0" + strY;
+}
+
+// construct the new string based on the naming convention
+var nextRoom = "rm_" + strX + "_" + strY;
+
+if (room_exists(asset_get_index(nextRoom))) {
+    room_goto(asset_get_index(nextRoom));
+    //left means shift x
+    x = 608;        
+}
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_up_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// UP through the door
+
+var curRoom = room_get_name(room);
+var tempX = "";
+var tempY = "";
+
+curRoom = string_digits(curRoom);
+
+// spit the curRoom string in half and store each half in a variable
+for (i = 1; i &lt; (string_length(curRoom) / 2) + 1; i++ ) {
+    tempX += string_char_at(curRoom, i);
+}
+
+for (i = (string_length(curRoom)/2) + 1; i &lt; string_length(curRoom) + 1; i++ ) {
+    tempY += string_char_at(curRoom, i);
+}
+
+// convert coords to numbers
+tempX = real(tempX);
+tempY = real(tempY);
+
+// alter coordinates based on which direction the player left the room
+//Up movement means y - 1
+tempY -= 1;
+strX = string(tempX);
+if string_length(strX) = 1 {
+   strX = "0" + strX;
+}
+strY = string(tempY);
+if string_length(strY) = 1 {
+   strY = "0" + strY;
+}
+
+// construct the new string based on the naming convention
+var nextRoom = "rm_" + strX + "_" + strY;
+show_message(nextRoom)
+if (room_exists(asset_get_index(nextRoom))) {
+    room_goto(asset_get_index(nextRoom));
+    //up means shift y
+    y = 320;        
+}
+
+
+
+
+
 </string>
           </argument>
         </arguments>
