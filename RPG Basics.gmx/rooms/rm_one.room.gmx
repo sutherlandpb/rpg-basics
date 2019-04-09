@@ -146,7 +146,7 @@
     <instance objName="obj_tall_wall" x="640" y="256" name="inst_6298B175" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tall_wall" x="640" y="288" name="inst_44693699" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tall_wall" x="640" y="320" name="inst_14FF8AC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="576" y="352" name="inst_EE6E1BE3" locked="0" code="new_room = rm_two;&#xA;new_x = 45;&#xA;new_y = 32;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="576" y="336" name="inst_EE6E1BE3" locked="0" code="new_room = rm_two;&#xA;new_x = 45;&#xA;new_y = 32;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wide_wall" x="640" y="352" name="inst_D8DDA3CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_input" x="160" y="32" name="inst_D5259015" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_door" x="224" y="192" name="inst_A0179D1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
