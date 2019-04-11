@@ -37,6 +37,7 @@
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_exp</sprite>
     <sprite>sprites\spr_50_xp</sprite>
+    <sprite>sprites\spr_red_potion</sprite>
     <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_mana</sprite>
     <sprite>sprites\spr_wide_wall</sprite>
